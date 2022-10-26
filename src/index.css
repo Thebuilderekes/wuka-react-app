@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  list-style: none;
+}
+
+:root {
+
+  --extralarge-fontSize : 100px;
+  --semilarge-fontSize : 70px;
+  --large-fontSize :  36px;
+  --medium-fontSize :  24px;
+  --semi-medium-fontSize :  18px; 
+  --default-fontSize :  16px;
+  --heading-bg: #181b1b;
+
+}
