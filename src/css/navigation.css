@@ -9,7 +9,7 @@ html {
 }
 
 .header {
-  background-color: #262b33;
+  background-color: #181b1b;
   padding: 1rem 0;
   width: 100%;
   position: fixed;
@@ -56,7 +56,10 @@ html {
   color: #ffffff;
   padding: 0 10px;
   font-size: 1.2rem;
+  text-transform: uppercase;
   cursor: pointer;
+  font-family: "Cinzel";
+  font-weight: 600;
   transition: all 1000ms ease;
 }
 .header .nav-container .desktop-nav .desktop-navItems .desktop-navLink:hover {
