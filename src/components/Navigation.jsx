@@ -45,12 +45,12 @@ function Navigation() {
         >
           {!navb ? (
             <img
-              src="../src/assets/close-icon.png"
+              src="../assets/close-icon.png"
               alt="close navigation icon"
             />
           ) : (
             <img
-              src="../src/assets/hamburger-icon.png"
+              src="../assets/hamburger-icon.png"
               alt="open navigation icon"
             />
           )}
