@@ -10,7 +10,7 @@ function HeroSection() {
       <div className="hero-section-text">
         <h1 className= " animate__animated animate__fadeIn  animate__delay-1s">WUK△</h1>
         <h2  className= " animate__animated animate__fadeIn  animate__delay-2s">Album launching on the 11th of November</h2>
-        <h3  className= " animate__animated animate__fadeIn  animate__delay-2s">TRACKS</h3>
+        <h3  className= "engraved-text animate__animated animate__fadeIn  animate__delay-2s">MY MUSIC</h3>
         <ul class="music-link">
           <li>
             <a className = "animate__animated animate__fadeInUp animate__delay-3s" 
@@ -57,36 +57,41 @@ const Section = styled.section`
   background-repeat: no-repeat;
   background-size: cover;
   font-family: 'Crimson Text';
+  position:relative;
 
   .hero-section-text {
-    width: 30%;
-    padding: 10% 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 40%;
+    padding: 5% 2rem;
     text-align: center;
 
-    @media(max-width: 1400px){
-      padding: 25% 2rem;
-      width: 100%;
-    }
 
     @media(max-width: 800px){
-      width: 100%;
-      padding: 30% 2rem;
-      background-color: #f5efef63;
+  background-color: #ffffff86;
+  width: 100%;
+  height:100vh;
+  padding: 25% 2rem;
     }
 
     @media(max-width: 400px){
-    width: 100%;
-    padding: 30% 2rem;
-    top:0;
-    right: 0;
-    bottom: 0;
+      padding: 25% 1rem;
     }
+
+
 
     h1 {
       font-size: var(--extralarge-fontSize);
-      padding-top: 5%;
-      opacity: 0.7;
+      padding-top: 5%;;
       z-index: 10;
+      background-color: #1d1d1d;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: #ffffff7e 3px 5px 1px;
 
       @media(max-width:800px){
             h1 {
@@ -110,16 +115,18 @@ const Section = styled.section`
       }
     }
 
- 
-
     h2 {
       margin: 5% 0;
       z-index: 10;
       font-size: var(--medium-fontSize);
+      font-style: italic;
+      
     }
 
     h3{
       font-size: var(--large-fontSize);
+
+      
     }
     @media(max-width: 400px){
       h3{
@@ -132,19 +139,30 @@ const Section = styled.section`
 
       li {
         list-style: none;
-        padding: 5% 0;
+        padding: 10px 0;
         
         a {
           color: #cf3259;
+          text-decoration: none;
+          box-shadow: inset 0 0 0 0 #636363;
+         margin: 0 -.25rem;
+          padding: 0 .25rem;
+           transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
           font-size: 24px;
           font-family: "Cinzel";
            font-weight: 700;
+           transition: 1s all;
 
           @media(max-width: 400px){
             font-size: 16px;
 
           }
         }
+
+        a:hover {
+           box-shadow: inset 10px 0 10px 0 #636363;
+           color: #000000;
+}
       }
     }
 

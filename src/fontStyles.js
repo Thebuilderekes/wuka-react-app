@@ -6,6 +6,11 @@ import CinzelWoff2 from "../src/assets/fonts/cinzel-v19-latin/cinzel-v19-latin-6
 
 import CrimsonWoff from  "./assets/fonts/crimson-text-v19-latin/crimson-text-v19-latin-600.woff"
 import CrimsonWoff2 from "./assets/fonts/crimson-text-v19-latin/crimson-text-v19-latin-600.woff2"
+import CrimsonWoff400 from  "./assets/fonts/crimson-text-v19-latin/crimson-text-v19-latin-regular.woff"
+import CrimsonWoff2400 from "./assets/fonts/crimson-text-v19-latin/crimson-text-v19-latin-regular.woff2"
+
+
+
 
 const FontStyles = createGlobalStyle`
 

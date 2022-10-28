@@ -1,4 +1,5 @@
 import React from 'react'
+import CrimsonWoff2400 from "../assets/fonts/crimson-text-v19-latin/crimson-text-v19-latin-700.woff"
 import "../index.css"
 import cartoonImg from "../assets/cartoon-img.png"
 import styled from 'styled-components';
@@ -28,6 +29,10 @@ align-items: center;
 background-color: #B75A64;
 padding: 5%;
 
+@media(max-width:800px){
+    padding: 18% 0;
+}
+
 @media(max-width:400px){
     padding: 15% 0;
 }
@@ -36,7 +41,10 @@ img{
     width: 200px;
     height: 200px;
     border-radius: 50%;
-
+    
+    @media(max-width:800px){
+        margin: 8% 0;
+    }
     @media(max-width:400px){
         width: 150px;
         height: 150px;
@@ -54,40 +62,46 @@ img{
 
 
     @media(min-width:700px){
-        margin: 2% 25%;
+        margin: 2% 15%;
 
     }
 
 
-    @media(max-width:400px){
+    @media(max-width:699px){
         padding: 5% 10%;
         margin: 3% 5%;
     }
 
     h2 {
-        font-size: var(--semilarge-fontSize) ;
+        font-size: var(--large-fontSize) ;
         text-align: center;
         color: #CCDDEF;
         background-color: var(--dark-color);
-        padding: 1% 10%;
-        margin: 2% 10%;
+        padding: 1% 5%;
+        margin: 2% 30%;
         font-family: 'Crimson Text';
         font-weight: 700;
 
         @media(min-width:1400px){
-            font-size: var(--large-fontSize) ;
             margin: 2% 20%;
         }
 
         @media(max-width: 900px){
-            margin: 2% 30%;
+            margin: 2% 25%;
             padding: 3%
 
         }
         
+        @media(max-width:600px){
+            text-align: center;
+            color: #CCDDEF;
+            background-color: var(--dark-color);
+            padding: 1% 10%;
+            margin: 2% 23%;
+        }
 
-        @media(max-width:400px){
-            font-size: var(--large-fontSize) ;
+        @media(max-width:360px){
+            font-size: var(--medium-fontSize) ;
             text-align: center;
             color: #CCDDEF;
             background-color: var(--dark-color);
@@ -100,10 +114,11 @@ img{
         font-size: var(--medium-fontSize );
         margin: 5% 0;
         line-height: 1.5;
-        font-family: 'Crimson Text';
+        font-family: ${CrimsonWoff2400};
+   
 
 
-        @media(max-width:400px){
+        @media(max-width:520px){
             font-size: var(--default-fontSize );
             margin: 5% 2%;
 

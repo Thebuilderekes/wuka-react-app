@@ -54,9 +54,6 @@ const Footer = styled.footer`
     overflow-x:hidden;
     font-family: 'Cinzel';
 
-    
-
- 
     @media(max-width: 800px){
         flex-direction: column;
 
@@ -96,6 +93,17 @@ const Footer = styled.footer`
             li{
                 list-style: none;
                 padding: 0 1rem;
+
+                 a{
+                     img  {
+                        transition: 1s all;
+                     }
+                    
+                    img:hover{
+                 transform: scaleY(20px);
+                }
+                 }
+            
             }
         }
 
