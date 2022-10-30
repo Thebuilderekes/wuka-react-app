@@ -2,9 +2,13 @@ import React from "react";
 import { useState } from "react";
 import "../index.css";
 import "../css/navigation.css";
+import CloseIcon from "../assets/close-icon.png";
+import HamburgerIcon from "../assets/hamburger-icon.png";
 import instagram from "../assets/icons8-instagram-logo-footer.png";
 import facebook from "../assets/icons8-facebook-footer.png";
 import twitter from "../assets/icons8-twitter-footer.png";
+
+
 
 function Navigation() {
   const [navb, setNavb] = useState(true);
@@ -45,12 +49,12 @@ function Navigation() {
         >
           {!navb ? (
             <img
-              src="../assets/close-icon.png"
+              src={CloseIcon}
               alt="close navigation icon"
             />
           ) : (
             <img
-              src="../assets/hamburger-icon.png"
+                src={HamburgerIcon}
               alt="open navigation icon"
             />
           )}
