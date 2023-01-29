@@ -10,7 +10,9 @@ html {
   scroll-behavior: smooth;
 }
 
-
+ul {
+  list-style: none;
+}
 
 .header {
   background-color: #181b1b;
@@ -32,7 +34,7 @@ html {
     justify-content: space-between;
     align-items: center;
     padding: 0 8rem;
-    font-family: "Candara";
+
 
     .top-icons {
       display: flex;
@@ -63,14 +65,14 @@ html {
       display: none;
 
       .desktop-navItems {
+        display: flex;
         .desktop-navLink {
           color: #ffffff;
           padding: 0 10px;
           font-size: 1.2rem;
           text-transform: uppercase;
           cursor: pointer;
-          font-family: 'Cinzel';
-          font-weight: 600;
+          font-family: 'Helvetica';
           -webkit-transition: all 1000ms ease;
           transition: all 1000ms ease;
 
@@ -113,14 +115,22 @@ html {
       align-items: center;
       padding-top: 13%;
       height: 100vh;
-
-      .mobile-navLink {
-        font-size: 30px;
-        color: #ffffff;
+      
+      li{
         padding: 2rem 0;
-        text-decoration: none;
-        font-family: "Candara";
+        .mobile-navLink {
+          font-size: 30px;
+          color: #ffffff;
+          text-decoration: none;
+          font-family: Helvetica, sans-serif;
+          
+          &:hover {
+            color: #cf3259;
+          }
+  
+    }
       }
+  
     }
   }
 }

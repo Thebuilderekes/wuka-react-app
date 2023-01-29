@@ -6,43 +6,25 @@ import bgImg from "../assets/wuka-2.webp";
 
 function HeroSection() {
   return (
-    <Section class="hero-section">
+    <Section
+      class="hero-section"
+      name="hero"
+    >
       <div className="hero-section-text">
-        <h1 className= " animate__animated animate__fadeIn  animate__delay-1s">WUK△</h1>
-        <h2  className= " animate__animated animate__fadeIn  animate__delay-2s">Album launching on the 11th of November</h2>
-        <h3  className= "engraved-text animate__animated animate__fadeIn  animate__delay-2s">MY MUSIC</h3>
-        <ul class="music-link">
-          <li>
-            <a className = "animate__animated animate__fadeInUp animate__delay-3s" 
-              href="https://distrokid.com/hyperfollow/wukaandquiries/midnight"
-              target="_blank"
-            >
-              "Midnight" music with Quiries Odoko
-            </a>
-          </li>
-          <li>
-            <a className = "animate__animated animate__fadeInUp animate__delay-3s"
-              href="https://www.youtube.com/watch?v=yV0KPRgC8uc&feature=youtu.be"
-              target="_blank"
-            >
-              {" "}
-              "Closer" video with Quiries Odoko
-            </a>
-          </li>
-          <li>
-            <a className = "animate__animated animate__fadeInUp animate__delay-3s" href="https://linki.st/denwuka" target="_blank">
-              Youtube content
-            </a>
-          </li>
-          <li>
-            <a className = "animate__animated animate__fadeInUp animate__delay-3s" 
-              href="https://audiomack.com/wuka-1/album/music-and-i-4"
-              target="_blank"
-            >
-              Music and I
-            </a>
-          </li>
-        </ul>
+        <h1 className=" animate__animated animate__fadeIn  animate__delay-1s">
+          WUK△
+        </h1>
+        <h2 className=" animate__animated animate__fadeIn  animate__delay-2s">
+          THE ALPHA
+        </h2>
+        <h2>
+          <a
+            href="https://spacefly.lnk.to/rigel"
+            target="_blank"
+          >
+            Stream the Album here
+          </a>
+        </h2>
       </div>
     </Section>
   );
@@ -56,8 +38,8 @@ const Section = styled.section`
   background-image: url(${bgImg});
   background-repeat: no-repeat;
   background-size: cover;
-  font-family: 'Crimson Text';
-  position:relative;
+  font-family: "Crimson Text";
+  position: relative;
 
   .hero-section-text {
     position: absolute;
@@ -68,106 +50,95 @@ const Section = styled.section`
     padding: 5% 2rem;
     text-align: center;
 
-
-    @media(max-width: 800px){
-  background-color: #ffffff86;
-  width: 100%;
-  height:100vh;
-  padding: 25% 2rem;
+    @media (max-width: 800px) {
+      background-color: #ffffff86;
+      width: 100%;
+      height: 100vh;
+      padding: 25% 2rem;
     }
 
-    @media(max-width: 400px){
+    @media (max-width: 400px) {
       padding: 25% 1rem;
     }
 
-
-
     h1 {
       font-size: var(--extralarge-fontSize);
-      padding-top: 5%;;
+      padding-top: 5%;
       z-index: 10;
       background-color: #1d1d1d;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    text-shadow: #ffffff7e 3px 5px 1px;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: #ffffff7e 3px 5px 1px;
 
-      @media(max-width:800px){
-            h1 {
-              font-size: var(--semilarge-fontSize);
-            }
-          }
+      @media (max-width: 800px) {
+        h1 {
+          font-size: var(--semilarge-fontSize);
+        }
+      }
 
-      @media(max-width:400px){
-            h1 {
-              font-size: var(--large-fontSize);
-            }
-          }
+      @media (max-width: 400px) {
+        h1 {
+          font-size: var(--large-fontSize);
+        }
+      }
 
-      @media(max-width:360px){
-            h1 {
-            font-size: var(--medium-fontSize);
-            }
-}
+      @media (max-width: 360px) {
+        h1 {
+          font-size: var(--medium-fontSize);
+        }
+      }
       span {
         writing-mode: horizontal-tb;
       }
     }
 
     h2 {
-      margin: 5% 0;
+      margin: 0 0 5% 0;
       z-index: 10;
-      font-size: var(--medium-fontSize);
-      font-style: italic;
-      
-    }
-
-    h3{
       font-size: var(--large-fontSize);
+      background-color: #1d1d1d;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: #ffffff7e 3px 5px 1px;
 
-      
+      a {
+        &:hover {
+          color: #cf3259;
+        }
+      }
     }
-    @media(max-width: 400px){
-      h3{
-      font-size: var(--medium-fontSize);
-    }
-    }
-
 
     ul {
-
       li {
         list-style: none;
         padding: 10px 0;
-        
+
         a {
           color: #cf3259;
           text-decoration: none;
           box-shadow: inset 0 0 0 0 #636363;
-         margin: 0 -.25rem;
-          padding: 0 .25rem;
-           transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+          margin: 0 -0.25rem;
+          padding: 0 0.25rem;
+          transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
           font-size: 24px;
           font-family: "Cinzel";
-           font-weight: 700;
-           transition: 1s all;
+          font-weight: 700;
+          transition: 1s all;
 
-          @media(max-width: 400px){
+          @media (max-width: 400px) {
             font-size: 16px;
-
           }
         }
 
         a:hover {
-           box-shadow: inset 10px 0 10px 0 #636363;
-           color: #000000;
-}
+          box-shadow: inset 10px 0 10px 0 #636363;
+          color: #000000;
+        }
       }
     }
-
-
   }
 `;
-
-
