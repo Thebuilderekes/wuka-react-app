@@ -116,4 +116,3 @@ function Navigation() {
 }
 
 export default Navigation;
-//how to create a responsive navbar in react?
