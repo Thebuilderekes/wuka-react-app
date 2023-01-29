@@ -93,8 +93,7 @@ function Navigation() {
       <nav className="mobile-nav nav">
         <ul className={!navb || !click ? "display-mobile-nav" : "display-none"}>
           <li>
-            <Link
-              onClick={handleClick}
+            <Link  onClick={handleClick}
               smooth={true}
               offset={50}
               duration={500}
@@ -105,8 +104,7 @@ function Navigation() {
             </Link>
           </li>
           <li>
-            <Link
-              onClick={handleClick}
+            <Link  onClick={handleClick}
               className="mobile-navLink"
               smooth={true}
               offset={50}
@@ -117,8 +115,7 @@ function Navigation() {
             </Link>
           </li>
           <li>
-            <Link
-              onClick={handleClick}
+            <Link  onClick={handleClick}
               className="mobile-navLink"
               smooth={true}
               offset={50}
