@@ -1,12 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import "../index.css";
+import { FaTwitter, FaInstagram, FaFacebookF } from "react-icons/fa";
 import wukaFooterImg from "../assets/wuka-footer.jpg";
-import instagram from "../assets/icons8-instagram-logo-footer.png";
-import facebook from "../assets/icons8-facebook-footer.png";
-import twitter from "../assets/icons8-twitter-footer.png";
 
 function Foot() {
+  const iconStyle = { color: "white", fontSize: "1.8rem" };
   return (
     <Footer name="contact">
       <div className="container">
@@ -22,26 +21,17 @@ function Foot() {
           <ul>
             <li>
               <a href="">
-                <img
-                  src={facebook}
-                  alt="facebook logo"
-                />
+                <FaFacebookF style={iconStyle} />
               </a>
             </li>
             <li>
               <a href="https://instagram.com/denwuka">
-                <img
-                  src={instagram}
-                  alt="instagram logo"
-                />
+                <FaInstagram style={iconStyle} />
               </a>
             </li>
             <li>
               <a href="">
-                <img
-                  src={twitter}
-                  alt="twitter logo"
-                />
+                <FaTwitter style={iconStyle} />
               </a>
             </li>
           </ul>

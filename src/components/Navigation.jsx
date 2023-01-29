@@ -1,13 +1,10 @@
 import React from "react";
 // import * as Scroll from 'react-scroll';
 import { Link } from "react-scroll";
+import { FaBars, FaTimes, FaInstagram, FaFacebookF } from "react-icons/fa";
 import { useState } from "react";
 import "../index.css";
 import "../css/navigation.css";
-import CloseIcon from "../assets/close-icon.png";
-import HamburgerIcon from "../assets/hamburger-icon.png";
-import instagram from "../assets/icons8-instagram-logo-footer.png";
-import facebook from "../assets/icons8-facebook-footer.png";
 // import twitter from "../assets/icons8-twitter-footer.png";
 
 function Navigation() {
@@ -15,22 +12,16 @@ function Navigation() {
   const handleClick = () => setNavb(!navb);
   const [click, setClick] = useState(true);
   const handleMenu = () => setNavb(!navb);
-
+  const iconStyle = { color: "white", fontSize: "1.8rem" };
   return (
     <header className="header">
       <div className="nav-container">
         <div className="top-icons">
           <a href="">
-            <img
-              src={facebook}
-              alt="facebook logo"
-            />
+            <FaFacebookF style={iconStyle} />
           </a>
           <a href="https://instagram.com/denwuka">
-            <img
-              src={instagram}
-              alt="instagram logo"
-            />
+            <FaInstagram style={iconStyle} />
           </a>
         </div>
         <nav className="desktop-nav nav">
@@ -76,24 +67,15 @@ function Navigation() {
           aria-label="main"
           onClick={handleClick}
         >
-          {!navb ? (
-            <img
-              src={CloseIcon}
-              alt="close navigation icon"
-            />
-          ) : (
-            <img
-              src={HamburgerIcon}
-              alt="open navigation icon"
-            />
-          )}
+          {!navb ? <FaTimes style={iconStyle} /> : <FaBars style={iconStyle} />}
         </button>
       </div>
 
       <nav className="mobile-nav nav">
         <ul className={!navb || !click ? "display-mobile-nav" : "display-none"}>
           <li>
-            <Link  onClick={handleClick}
+            <Link
+              onClick={handleMenu}
               smooth={true}
               offset={50}
               duration={500}
@@ -104,7 +86,8 @@ function Navigation() {
             </Link>
           </li>
           <li>
-            <Link  onClick={handleClick}
+            <Link
+              onClick={handleMenu}
               className="mobile-navLink"
               smooth={true}
               offset={50}
@@ -115,7 +98,8 @@ function Navigation() {
             </Link>
           </li>
           <li>
-            <Link  onClick={handleClick}
+            <Link
+              onClick={handleMenu}
               className="mobile-navLink"
               smooth={true}
               offset={50}
