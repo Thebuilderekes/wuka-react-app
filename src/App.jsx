@@ -1,12 +1,9 @@
 import React from "react";
-import { useState } from "react";
-import styled from "styled-components";
-import FontStyles from "./fontStyles";
 
-import Navigation from "./components/Navigation";
-import HeroSection from "./components/HeroSection";
-import About from "./components/About";
-import Foot from "./components/Footer";
+import Navigation from "./components/NavigationMenu/Navigation";
+import HeroSection from "./components/HeroSection/HeroSection";
+import About from "./components/About/About";
+import Foot from "./components/Footer/Footer";
 import "./index.css";
 
 function App() {

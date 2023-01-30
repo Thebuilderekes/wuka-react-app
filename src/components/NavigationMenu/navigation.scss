@@ -19,6 +19,7 @@ ul {
   position: fixed;
   z-index: 999;
 
+  //utiltity class
   .display-none {
     display: none;
   }
@@ -33,14 +34,6 @@ ul {
     align-items: center;
     padding: 0 8rem;
 
-    .top-icons {
-      display: flex;
-
-      a {
-        padding: 0 10px;
-      }
-    }
-
     @media (max-width: 1400px) {
       padding: 0 2rem;
     }
@@ -48,11 +41,18 @@ ul {
     @media (max-width: 780px) {
       padding: 0 1.5rem;
     }
-
     a {
       text-decoration: none;
       color: #ffffff;
       font-size: 18px;
+    }
+
+    .top-icons {
+      display: flex;
+
+      a {
+        padding: 0 10px;
+      }
     }
 
     //DESKTOP NAVIGATION STYLES
@@ -112,6 +112,7 @@ ul {
 
       li {
         padding: 2rem 0;
+        cursor: pointer;
         .mobile-navLink {
           font-size: 30px;
           color: #ffffff;

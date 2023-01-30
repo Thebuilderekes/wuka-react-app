@@ -1,30 +1,30 @@
 import React from "react";
 import styled from "styled-components";
-import { createGlobalStyle } from "styled-components";
-import "../index.css";
-import bgImg from "../assets/wuka-2.webp";
+// import { createGlobalStyle } from "styled-components";
+import "../../index.css";
+import bgImg from "../../assets/wuka-2.webp";
 
 function HeroSection() {
   return (
     <Section
-      class="hero-section"
+      className="hero-section"
       name="hero"
     >
       <div className="hero-section-text">
         <h1 className=" animate__animated animate__fadeIn  animate__delay-1s">
-          WUK△
+          WUKA
         </h1>
         <h2 className=" animate__animated animate__fadeIn  animate__delay-2s">
           THE ALPHA
         </h2>
-        <h2>
+        <nav className=" animate__animated animate__fadeIn  animate__delay-3s">
           <a
             href="https://spacefly.lnk.to/rigel"
             target="_blank"
           >
             Stream the Album here
           </a>
-        </h2>
+        </nav>
       </div>
     </Section>
   );
@@ -49,6 +49,19 @@ const Section = styled.section`
     height: 40%;
     padding: 5% 2rem;
     text-align: center;
+
+    nav {
+      a {
+        font-size: var(--large-fontSize);
+        color: #ffffff;
+        background-color: #1a1212;
+        padding: 10px;
+        text-decoration: none;
+        &:hover {
+          color: #cf3259;
+        }
+      }
+    }
 
     @media (max-width: 800px) {
       background-color: #ffffff86;

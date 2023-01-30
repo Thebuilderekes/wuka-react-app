@@ -1,7 +1,7 @@
 import React from "react";
-import CrimsonWoff2400 from "../assets/fonts/crimson-text-v19-latin/crimson-text-v19-latin-700.woff";
-import "../index.css";
-import cartoonImg from "../assets/cartoon-img.png";
+import CrimsonWoff2400 from "../../assets/fonts/crimson-text-v19-latin/crimson-text-v19-latin-700.woff";
+import "../../index.css";
+import cartoonImg from "../../assets/cartoon-img.png";
 import styled from "styled-components";
 import "animate.css";
 
@@ -9,11 +9,11 @@ function About() {
   return (
     <Section
       className="about-section"
-      name="about"
+      id="about"
     >
       <img
         src={cartoonImg}
-        alt=""
+        alt="cartoon-like image of wuka"
       />
       <div className="card">
         <h2 className="about-heading animate__animated animate__swing animate__infinite	infinite">

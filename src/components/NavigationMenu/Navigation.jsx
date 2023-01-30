@@ -1,10 +1,9 @@
 import React from "react";
 // import * as Scroll from 'react-scroll';
-import { Link } from "react-scroll";
 import { FaBars, FaTimes, FaInstagram, FaFacebookF } from "react-icons/fa";
 import { useState } from "react";
-import "../index.css";
-import "../css/navigation.css";
+import "../../index.css";
+import "./navigation.css";
 // import twitter from "../assets/icons8-twitter-footer.png";
 
 function Navigation() {
@@ -16,98 +15,88 @@ function Navigation() {
   return (
     <header className="header">
       <div className="nav-container">
-        <div className="top-icons">
-          <a href="">
+        <nav className="top-icons">
+          <a
+            href=""
+            aria-label="facebook icon to page"
+          >
             <FaFacebookF style={iconStyle} />
           </a>
-          <a href="https://instagram.com/denwuka">
+          <a
+            href="https://instagram.com/denwuka"
+            aria-label="instagram icon to page"
+          >
             <FaInstagram style={iconStyle} />
           </a>
-        </div>
+        </nav>
         <nav className="desktop-nav nav">
           <ul className="desktop-navItems">
             <li>
-              <Link
-                smooth={true}
-                offset={50}
-                duration={500}
+              <a
                 className="desktop-navLink"
-                to="/"
+                href="index.html"
               >
                 Home
-              </Link>
+              </a>
             </li>
             <li>
-              <Link
+              <a
                 className="desktop-navLink"
-                smooth={true}
-                offset={50}
-                duration={500}
-                to="about"
+                href="index.html#about"
               >
                 About
-              </Link>
+              </a>
             </li>
             <li>
-              <Link
+              <a
                 className="desktop-navLink"
-                smooth={true}
-                offset={50}
-                duration={500}
-                to="contact"
+                href="index.html#footer"
               >
                 Contact
-              </Link>
+              </a>
             </li>
           </ul>
         </nav>
         <button
           className="btn"
           role="navigation"
-          aria-label="main"
+          aria-label="navigation toggle button"
           onClick={handleClick}
         >
           {!navb ? <FaTimes style={iconStyle} /> : <FaBars style={iconStyle} />}
+          {/* when the setNavb(navb) it means that the navigation is (true) closed and not in display so show the hamburger bars icon.
+          However, when setNavb(!navb) it means that the navigation is (false) open and in display so show the times close icon  */}
         </button>
       </div>
 
       <nav className="mobile-nav nav">
         <ul className={!navb || !click ? "display-mobile-nav" : "display-none"}>
           <li>
-            <Link
-              onClick={handleMenu}
-              smooth={true}
-              offset={50}
-              duration={500}
+            <a
               className="mobile-navLink"
-              to="/"
+              onClick={handleMenu}
+              href="index.html"
             >
               Home
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
+            <a
               onClick={handleMenu}
               className="mobile-navLink"
-              smooth={true}
-              offset={50}
-              duration={500}
-              to="about"
+              href="index.html#about"
             >
               About
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
+            <a
               onClick={handleMenu}
               className="mobile-navLink"
-              smooth={true}
-              offset={50}
-              duration={500}
-              to="contact"
+              href="index.html#footer"
             >
               Contact
-            </Link>
+            </a>
           </li>
         </ul>
       </nav>
