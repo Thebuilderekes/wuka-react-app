@@ -64,8 +64,8 @@ function Navigation() {
           onClick={handleClick}
         >
           {!navb ? <FaTimes style={iconStyle} /> : <FaBars style={iconStyle} />}
-          {/* when the setNavb(navb) it means that the navigation is (true) closed and not in display so show the hamburger bars icon.
-          However, when setNavb(!navb) it means that the navigation is (false) open and in display so show the times close icon  */}
+          {/* when the setNavb(navb) it means that the navigation is (true) closed and not in display so display the hamburger bars icon.
+          However, when setNavb(!navb) it means that the navigation is (false) open and in display so display the times close icon  */}
         </button>
       </div>
 

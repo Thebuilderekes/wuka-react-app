@@ -6,10 +6,7 @@ import bgImg from "../../assets/wuka-2.webp";
 
 function HeroSection() {
   return (
-    <Section
-      className="hero-section"
-      name="hero"
-    >
+    <Section className="hero-section">
       <div className="hero-section-text">
         <h1 className=" animate__animated animate__fadeIn  animate__delay-1s">
           WUKA
@@ -59,6 +56,10 @@ const Section = styled.section`
         text-decoration: none;
         &:hover {
           color: #cf3259;
+        }
+
+        @media (max-width: 500px) {
+          font-size: var(--medium-fontSize);
         }
       }
     }

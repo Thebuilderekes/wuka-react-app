@@ -31,12 +31,6 @@ ul {
   align-items: center;
   padding: 0 8rem;
 }
-.header .nav-container .top-icons {
-  display: flex;
-}
-.header .nav-container .top-icons a {
-  padding: 0 10px;
-}
 @media (max-width: 1400px) {
   .header .nav-container {
     padding: 0 2rem;
@@ -51,6 +45,12 @@ ul {
   text-decoration: none;
   color: #ffffff;
   font-size: 18px;
+}
+.header .nav-container .top-icons {
+  display: flex;
+}
+.header .nav-container .top-icons a {
+  padding: 0 10px;
 }
 .header .nav-container .desktop-nav {
   display: none;
@@ -101,12 +101,14 @@ ul {
 }
 .header .mobile-nav .display-mobile-nav li {
   padding: 2rem 0;
+  cursor: pointer;
 }
 .header .mobile-nav .display-mobile-nav li .mobile-navLink {
   font-size: 30px;
   color: #ffffff;
   text-decoration: none;
   font-family: Helvetica, sans-serif;
+  cursor: pointer;
 }
 .header .mobile-nav .display-mobile-nav li .mobile-navLink:hover {
   color: #cf3259;

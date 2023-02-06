@@ -108,13 +108,13 @@ const Section = styled.div`
         margin: 2% 23%;
       }
 
-      @media (max-width: 360px) {
+      @media (max-width: 500px) {
         font-size: var(--medium-fontSize);
         text-align: center;
         color: #ccddef;
         background-color: var(--dark-color);
-        padding: 1% 10%;
-        margin: 2% 0;
+        padding: 1% 0%;
+        margin: 2% 20%;
       }
     }
 
