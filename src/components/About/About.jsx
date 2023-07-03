@@ -1,7 +1,6 @@
 import React from "react";
-import CrimsonWoff2400 from "../../assets/fonts/crimson-text-v19-latin/crimson-text-v19-latin-700.woff";
 import "../../index.css";
-import cartoonImg from "../../assets/cartoon-img.png";
+import cartoonImg from "../../assets/img/cartoon-img.png";
 import styled from "styled-components";
 import "animate.css";
 
@@ -15,20 +14,14 @@ function About() {
 				</h2>
 				<p>
 					Introducing the mesmerizing melodies and soul-stirring compositions of
-					our talented musician. With the release of his highly anticipated
-					debut album, he invites listeners on an extraordinary musical journey
-					that transcends genres and captivates hearts. This groundbreaking
-					collection showcases his unique artistry, effortlessly blending
-					elements of pop, rock, and alternative, creating an unmistakable sound
-					that resonates with audiences worldwide. <br />
-					<br />
-					As an emerging artist, he is quickly becoming a sensation, gaining
-					momentum and admiration for his exceptional talent and undeniable
-					stage presence. His infectious energy and magnetic personality have
-					garnered a growing fan base, eagerly following his every move. From
-					sold-out shows in intimate venues to soaring chart positions, this
-					rising star is leaving an indelible mark on the music scene.
-					<br />
+					our talented musician names WUKA. With the release of his highly
+					anticipated debut album{" "}
+					<a href="https://spacefly.lnk.to/rigel">"Rigel"</a>, he invites
+					listeners on an extraordinary musical journey that transcends genres
+					and captivates hearts. This groundbreaking collection showcases his
+					unique artistry, effortlessly blending elements of pop, rock, and
+					alternative, creating an unmistakable sound that resonates with
+					audiences worldwide. <br />
 					<br />
 					With each captivating performance and every heartfelt lyric, his star
 					power continues to shine brighter, firmly establishing him as a force
@@ -53,6 +46,7 @@ const Section = styled.div`
 	align-items: center;
 	background-color: #b75a64;
 	padding: 5%;
+	font-family: "Crimson Text";
 
 	@media (max-width: 800px) {
 		padding: 18% 0;
@@ -101,7 +95,6 @@ const Section = styled.div`
 			background-color: var(--dark-color);
 			padding: 1% 5%;
 			margin: 2% 30%;
-			font-family: "Crimson Text";
 			font-weight: 700;
 
 			@media (min-width: 1400px) {
@@ -135,7 +128,10 @@ const Section = styled.div`
 			font-size: var(--medium-fontSize);
 			margin: 5% 0;
 			line-height: 1.5;
-			font-family: ${CrimsonWoff2400};
+
+			a {
+				color: ;
+			}
 
 			@media (max-width: 520px) {
 				font-size: var(--default-fontSize);
@@ -143,9 +139,4 @@ const Section = styled.div`
 			}
 		}
 	}
-`;
-
-const Img = styled.img`
-	border-radius: 50%;
-	margin: 0 auto;
 `;

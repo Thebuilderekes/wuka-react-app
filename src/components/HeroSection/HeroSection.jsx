@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 // import { createGlobalStyle } from "styled-components";
 import "../../index.css";
-import bgImg from "../../assets/wuka-2.webp";
+import bgImg from "../../assets/img/wuka-2.webp";
 
 function HeroSection() {
 	return (
@@ -16,7 +16,7 @@ function HeroSection() {
 				</h2>
 				<nav className=" animate__animated animate__fadeIn  animate__delay-3s">
 					<a href="https://spacefly.lnk.to/rigel" target="_blank">
-						Stream the Album here
+						Listen to Album here
 					</a>
 				</nav>
 			</div>

@@ -16,6 +16,7 @@ const FontStyles = createGlobalStyle`
   src: local('Crimson Text'),
        url(${CrimsonWoff2}) format('woff2'), /* Super Modern Browsers */
        url(${CrimsonWoff}) format('woff'); /* Modern Browsers */
+       font-display: swap;
 
 }
 
@@ -27,6 +28,8 @@ const FontStyles = createGlobalStyle`
   src: local('Cinzel'),
        url(${CinzelWoff2}) format('woff2'), /* Super Modern Browsers */
        url(${CinzelWoff}) format('woff'); /* Modern Browsers */
+       font-display: swap;
+
  
 }
 `;

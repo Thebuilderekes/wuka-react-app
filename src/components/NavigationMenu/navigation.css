@@ -64,7 +64,7 @@ ul {
   font-size: 1.2rem;
   text-transform: uppercase;
   cursor: pointer;
-  font-family: "Helvetica";
+  font-family: "Crimson Text";
   transition: all 1000ms ease;
 }
 .header .nav-container .desktop-nav .desktop-navItems .desktop-navLink:hover {
