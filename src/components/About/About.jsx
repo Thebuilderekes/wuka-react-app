@@ -84,7 +84,7 @@ const Section = styled.div`
 		}
 
 		@media (max-width: 699px) {
-			padding: 5% 10%;
+			padding: 5% 5%;
 			margin: 3% 5%;
 		}
 
@@ -135,7 +135,7 @@ const Section = styled.div`
 
 			@media (max-width: 520px) {
 				font-size: var(--default-fontSize);
-				margin: 5% 2%;
+				margin: 5% 0%;
 			}
 		}
 	}
