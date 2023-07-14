@@ -8,20 +8,21 @@ function About() {
 	return (
 		<Section className="about-section" id="about">
 			<img src={cartoonImg} alt="cartoon-like image of wuka" />
-			<div className="card">
+			<div className="card   animate__animated animate__fadeIn animate__delay-4s ">
 				<h2 className="about-heading animate__animated animate__swing animate__infinite	infinite">
 					ABOUT
 				</h2>
-				<p>
+				<p className="  animate__animated animate__fadeIn animate__delay-5s ">
 					Introducing the mesmerizing melodies and soul-stirring compositions of
-					our talented musician names WUKA. With the release of his highly
-					anticipated debut album{" "}
-					<a href="https://spacefly.lnk.to/rigel">"Rigel"</a>, he invites
-					listeners on an extraordinary musical journey that transcends genres
-					and captivates hearts. This groundbreaking collection showcases his
-					unique artistry, effortlessly blending elements of pop, rock, and
-					alternative, creating an unmistakable sound that resonates with
-					audiences worldwide. <br />
+					WUKA. With the release of his highly anticipated debut album{" "}
+					<a href="https://spacefly.lnk.to/rigel" target="_blank">
+						"Rigel"
+					</a>
+					, he invites listeners on an extraordinary musical journey that
+					transcends genres and captivates hearts. This groundbreaking
+					collection showcases his unique artistry, effortlessly blending
+					elements of pop, rock, and alternative, creating an unmistakable sound
+					that resonates with audiences worldwide. <br />
 					<br />
 					With each captivating performance and every heartfelt lyric, his star
 					power continues to shine brighter, firmly establishing him as a force
@@ -89,53 +90,53 @@ const Section = styled.div`
 		}
 
 		h2 {
-			font-size: var(--large-fontSize);
+			font-size: var(--large-fs);
 			text-align: center;
 			color: #ccddef;
 			background-color: var(--dark-color);
-			padding: 1% 5%;
+			padding: var(--spacing-1) var(--spacing-5);
 			margin: 2% 30%;
 			font-weight: 700;
 
 			@media (min-width: 1400px) {
-				margin: 2% 20%;
+				margin: var(--spacing-2) var(--spacing-20);
 			}
 
 			@media (max-width: 900px) {
-				margin: 2% 25%;
-				padding: 3%;
+				margin: var(--spacing-2) var(--spacing-25);
+				padding: var(--spacing-3);
 			}
 
 			@media (max-width: 600px) {
 				text-align: center;
 				color: #ccddef;
 				background-color: var(--dark-color);
-				padding: 1% 10%;
-				margin: 2% 23%;
+				padding: var(--spacing-1) var(--spacing-10);
+				margin: var(--spacing-2) var(--spacing-25);
 			}
 
 			@media (max-width: 500px) {
-				font-size: var(--medium-fontSize);
+				font-size: var(--medium-fs);
 				text-align: center;
 				color: #ccddef;
 				background-color: var(--dark-color);
-				padding: 1% 0%;
-				margin: 2% 20%;
+				padding: var(--spacing-1) 0%;
+				margin: var(--spacing-2) var(--spacing-20);
 			}
 		}
 
 		p {
-			font-size: var(--medium-fontSize);
-			margin: 5% 0;
+			font-size: var(--medium-fs);
+			margin: var(--spacing-5) 0;
 			line-height: 1.5;
 
 			a {
-				color: ;
+				color: #f5172d;
 			}
 
 			@media (max-width: 520px) {
-				font-size: var(--default-fontSize);
-				margin: 5% 0%;
+				font-size: var(--default-fs);
+				margin: var(--spacing-5) 0%;
 			}
 		}
 	}

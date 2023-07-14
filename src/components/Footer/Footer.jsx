@@ -12,7 +12,7 @@ function Foot() {
 					<img src={wukaFooterImg} alt="wuka the artiste" />
 				</div>
 
-				<div className="follow">
+				<div className="follow animate__animated animate__fadeIn animate__delay-6s ">
 					<h3>FOLLOW WUKA</h3>
 					<ul>
 						<li>
@@ -62,7 +62,7 @@ function Foot() {
 
 export default Foot;
 
-const iconStyle = { color: "white", fontSize: "1.8rem" };
+const iconStyle = { color: "white", fontSize: "2rem" };
 const Footer = styled.footer`
 	.container {
 		width: 100%;
@@ -96,7 +96,7 @@ const Footer = styled.footer`
 
 			> h3 {
 				margin: 3rem 0;
-				font-size: var(--large-fontSize);
+				font-size: var(--large-fs);
 				font-weight: 600;
 				color: #ccddef;
 			}

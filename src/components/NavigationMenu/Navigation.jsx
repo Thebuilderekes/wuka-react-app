@@ -1,21 +1,22 @@
 import React from "react";
-// import * as Scroll from 'react-scroll';
+import styled from "styled-components";
 import { FaBars, FaTimes, FaInstagram, FaFacebookF } from "react-icons/fa";
 import { useState } from "react";
 import "../../index.css";
-import "./navigation.css";
-// import twitter from "../assets/icons8-twitter-footer.png";
 
 function Navigation() {
-	const [navb, setNavb] = useState(true);
-	const handleClick = () => setNavb(!navb);
-	const [click, setClick] = useState(true);
-	const handleMenu = () => setNavb(!navb);
-	const iconStyle = { color: "white", fontSize: "1.8rem" };
+	const [showNav, setShowNav] = useState(true);
+	const handleClick = () => setShowNav(!showNav);
+	// const [click, setClick] = useState(true);
+	const handleMenu = () => setShowNav(!showNav);
+	const iconStyle = {
+		color: "white",
+		fontSize: "2rem",
+	};
 	return (
-		<header className="header">
-			<div className="nav-container">
-				<nav className="top-icons">
+		<Header className="header">
+			<div className={showNav ? "nav-container" : "show-mobile-menu"}>
+				<nav className="social-icons">
 					<a
 						href="https://instagram.com/denwuka"
 						aria-label="instagram icon to page"
@@ -26,62 +27,158 @@ function Navigation() {
 						<FaFacebookF style={iconStyle} />
 					</a>
 				</nav>
-				<nav className="desktop-nav nav">
-					<ul className="desktop-navItems">
+				<nav className="nav nav">
+					<ul className={showNav ? "navItems" : "mobile-nav "}>
 						<li>
-							<a className="desktop-navLink" href="index.html">
+							<a className="navLink" href="index.html">
 								Home
 							</a>
 						</li>
 						<li>
-							<a className="desktop-navLink" href="index.html#about">
+							<a className="navLink" href="index.html#about">
 								About
 							</a>
 						</li>
 						<li>
-							<a className="desktop-navLink" href="index.html#footer">
+							<a className="navLink" href="index.html#footer">
 								Contact
 							</a>
 						</li>
 					</ul>
 				</nav>
-				<button
-					className="btn"
-					role="navigation"
-					aria-label="navigation toggle button"
-					onClick={handleClick}
-				>
-					{!navb ? <FaTimes style={iconStyle} /> : <FaBars style={iconStyle} />}
-					{/* when the setNavb(navb) it means that the navigation is (true) closed and not in display so display the hamburger bars icon.
-          However, when setNavb(!navb) it means that the navigation is (false) open and in display so display the times close icon  */}
-				</button>
 			</div>
-
-			<nav className="mobile-nav nav">
-				<ul className={!navb || !click ? "display-mobile-nav" : "display-none"}>
-					<li>
-						<a
-							className="mobile-navLink"
-							onClick={handleMenu}
-							href="index.html"
-						>
-							Home
-						</a>
-					</li>
-					<li>
-						<a onClick={handleMenu} className="mobile-navLink" href="#about">
-							About
-						</a>
-					</li>
-					<li>
-						<a onClick={handleMenu} className="mobile-navLink" href="#footer">
-							Contact
-						</a>
-					</li>
-				</ul>
-			</nav>
-		</header>
+			{/* Navigation toggle button */}
+			<button
+				className="btn"
+				role="navigation"
+				aria-label="navigation toggle button"
+				onClick={handleClick}
+			>
+				{showNav ? <FaBars style={iconStyle} /> : <FaTimes style={iconStyle} />}
+				{/* when the setShowNav(showNav) is true, it means that the mobile navigation is closed indicating mobile hamburger icon is displayed to allow user click/tap open the menu is in display.
+          However, when setShowNav(!showNav) is false it means that the mobile navigation is not closed but the close menu icon is now in display to allow user click/tap to close the menu  (false) */}
+			</button>
+		</Header>
 	);
 }
 
 export default Navigation;
+
+const Header = styled.header`
+	background-color: var(--dark-color);
+	display: flex;
+	justify-content: space-between;
+	padding: 1rem 20px;
+	width: 100%;
+	position: fixed;
+	z-index: 999;
+
+	/*TODO: start: figure out why you have to style .social-icons and li here to  for mobile because it is not working down where it is suppose to be nested and styled, might have something to do with ::marker*/
+	.social-icons {
+		display: flex;
+		gap: 1rem;
+	}
+
+	li {
+		list-style: none;
+
+		@media (max-width: 700px) {
+			margin: 20px 0;
+		}
+		a {
+			text-decoration: none;
+			color: #ffffff;
+			font-size: 1.2rem;
+			font-family: "Crimson Text";
+			text-transform: uppercase;
+		}
+	}
+	/*TODO: end */
+
+	.nav-container {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		width: 100%;
+
+		.show-mobile-menu {
+			display: flex;
+			flex-direction: column;
+			padding: 0 20px;
+
+			@media (max-width: 1400px) {
+				flex-direction: row;
+			}
+		}
+
+		@media (max-width: 780px) {
+			flex-direction: column;
+		}
+
+		.social-icons {
+			display: flex;
+
+			a {
+				text-decoration: none;
+				color: #ffffff;
+			}
+		}
+
+		.nav {
+			display: none;
+			flex-direction: column;
+			list-style: none;
+
+			@media (min-width: 800px) {
+				display: block;
+			}
+
+			@media (max-width: 800px) {
+				padding: 100px 0;
+			}
+
+			.navItems {
+				display: flex;
+				flex-direction: row;
+				list-style: none;
+
+				@media (min-width: 800px) {
+					display: flex;
+					flex-direction: row;
+				}
+
+				li {
+					.navLink {
+						text-decoration: none;
+						color: #ffffff;
+						padding: 20px 10px;
+						font-size: 1.2rem;
+						text-transform: uppercase;
+						cursor: pointer;
+						font-family: "Crimson Text";
+						transition: all 1000ms ease;
+
+						&:hover {
+							color: #cf3259;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	button {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		background-color: transparent;
+		margin: 0 10px;
+		color: #ffffff;
+		font-weight: 600;
+		border: none;
+
+		@media (min-width: 800px) {
+			display: none;
+		}
+	}
+`;

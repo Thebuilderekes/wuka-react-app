@@ -7,14 +7,10 @@ import bgImg from "../../assets/img/wuka-2.webp";
 function HeroSection() {
 	return (
 		<Section className="hero-section">
-			<div className="hero-section-text">
-				<h1 className=" animate__animated animate__fadeIn  animate__delay-1s">
-					WUKA
-				</h1>
-				<h2 className=" animate__animated animate__fadeIn  animate__delay-2s">
-					THE ALPHA
-				</h2>
-				<nav className=" animate__animated animate__fadeIn  animate__delay-3s">
+			<div className="hero-section-text animate__animated animate__fadeIn  animate__delay-1s">
+				<h1>WUKA</h1>
+				<h2>THE ALPHA</h2>
+				<nav>
 					<a href="https://spacefly.lnk.to/rigel" target="_blank">
 						Listen to Album here
 					</a>
@@ -35,38 +31,51 @@ const Section = styled.section`
 	font-family: "Crimson Text";
 	position: relative;
 
+	@media (max-width: 500px) {
+		background-position: center;
+	}
+
 	.hero-section-text {
 		position: absolute;
-		top: 0;
 		left: 0;
-		width: 40%;
-		height: 40%;
-		padding: 5% 2rem;
+		top: 0;
 		text-align: center;
+
+		@media (min-width: 800px) {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 40%;
+			height: 40%;
+			padding: 5% 2rem;
+		}
 
 		nav {
 			a {
-				font-size: var(--large-fontSize);
+				font-size: var(--large-fs);
 				color: #ffffff;
-				background-color: #1a1212;
+				background-color: var(--dark-color);
 				padding: 10px;
 				text-decoration: none;
 				&:hover {
 					color: #cf3259;
-					background-color: #999999;
+					background-color: #f5f5f5;
+					box-shadow: -12px 10px 67px 0px rgba(0, 0, 0, 0.75);
+					-webkit-box-shadow: -12px 10px 67px 0px rgba(0, 0, 0, 0.75);
+					-moz-box-shadow: -12px 10px 67px 0px rgba(0, 0, 0, 0.75);
 				}
 
 				@media (max-width: 500px) {
-					font-size: var(--medium-fontSize);
+					font-size: var(--medium-fs);
 				}
 			}
 		}
 
 		@media (max-width: 800px) {
-			background-color: #ffffff86;
+			background-color: #0e0c0c49;
 			width: 100%;
 			height: 100vh;
-			padding: 25% 2rem;
+			padding: 70% 2rem;
 		}
 
 		@media (max-width: 400px) {
@@ -74,31 +83,31 @@ const Section = styled.section`
 		}
 
 		h1 {
-			font-size: var(--extralarge-fontSize);
+			font-size: var(--extralarge-fs);
 			padding-top: 5%;
 			z-index: 10;
-			background-color: #1d1d1d;
+			background-color: #ffffff7e;
 			-webkit-background-clip: text;
 			-moz-background-clip: text;
 			background-clip: text;
 			color: transparent;
-			text-shadow: #ffffff7e 3px 5px 1px;
+			text-shadow: #994444 3px 5px 1px;
 
 			@media (max-width: 800px) {
 				h1 {
-					font-size: var(--semilarge-fontSize);
+					font-size: var(--semilarge-fs);
 				}
 			}
 
 			@media (max-width: 400px) {
 				h1 {
-					font-size: var(--large-fontSize);
+					font-size: var(--large-fs);
 				}
 			}
 
 			@media (max-width: 360px) {
 				h1 {
-					font-size: var(--medium-fontSize);
+					font-size: var(--medium-fs);
 				}
 			}
 			span {
@@ -107,15 +116,15 @@ const Section = styled.section`
 		}
 
 		h2 {
-			margin: 0 0 5% 0;
+			margin-bottom: 5%;
 			z-index: 10;
-			font-size: var(--large-fontSize);
-			background-color: #1d1d1d;
+			font-size: var(--large-fs);
+			background-color: #ffffff7e;
 			-webkit-background-clip: text;
 			-moz-background-clip: text;
 			background-clip: text;
 			color: transparent;
-			text-shadow: #ffffff7e 3px 5px 1px;
+			text-shadow: #1d1d1d 3px 5px 1px;
 
 			a {
 				&:hover {
