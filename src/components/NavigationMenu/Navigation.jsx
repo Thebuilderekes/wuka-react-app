@@ -35,12 +35,12 @@ function Navigation() {
 							</a>
 						</li>
 						<li>
-							<a className="navLink" href="index.html#about">
+							<a className="navLink" href="#about">
 								About
 							</a>
 						</li>
 						<li>
-							<a className="navLink" href="index.html#footer">
+							<a className="navLink" href="#footer">
 								Contact
 							</a>
 						</li>

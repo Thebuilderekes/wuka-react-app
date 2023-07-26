@@ -99,6 +99,7 @@ const Footer = styled.footer`
 				font-size: var(--large-fs);
 				font-weight: 600;
 				color: #ccddef;
+				text-align: center;
 			}
 			ul {
 				display: flex;

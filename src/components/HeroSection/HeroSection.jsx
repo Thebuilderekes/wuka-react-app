@@ -39,6 +39,7 @@ const Section = styled.section`
 		position: absolute;
 		left: 0;
 		top: 0;
+		z-index: 15;
 		text-align: center;
 
 		@media (min-width: 800px) {
@@ -83,7 +84,7 @@ const Section = styled.section`
 		}
 
 		h1 {
-			font-size: var(--extralarge-fs);
+			font-size: var(--semiextralarge-fs);
 			padding-top: 5%;
 			z-index: 10;
 			background-color: #ffffff7e;
@@ -93,25 +94,12 @@ const Section = styled.section`
 			color: transparent;
 			text-shadow: #994444 3px 5px 1px;
 
-			@media (max-width: 800px) {
-				h1 {
-					font-size: var(--semilarge-fs);
-				}
+			@media (min-width: 800px) {
+				font-size: var(--extralarge-fs);
 			}
 
-			@media (max-width: 400px) {
-				h1 {
-					font-size: var(--large-fs);
-				}
-			}
-
-			@media (max-width: 360px) {
-				h1 {
-					font-size: var(--medium-fs);
-				}
-			}
-			span {
-				writing-mode: horizontal-tb;
+			@media (max-width: 500px) {
+				padding-top: var(--spacing-130);
 			}
 		}
 

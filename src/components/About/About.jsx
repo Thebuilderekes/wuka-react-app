@@ -44,6 +44,7 @@ export default About;
 const Section = styled.div`
 	display: flex;
 	flex-direction: column;
+	z-index: 20;
 	align-items: center;
 	background-color: #b75a64;
 	padding: 5%;
@@ -79,6 +80,7 @@ const Section = styled.div`
 		-webkit-box-shadow: 10px 10px 20px 0px rgba(99, 54, 58, 0.75);
 		-moz-box-shadow: 10px 10px 20px 0px rgba(99, 54, 58, 0.75);
 		padding: 1% 5%;
+		text-align: center;
 
 		@media (min-width: 700px) {
 			margin: 2% 15%;
@@ -90,12 +92,13 @@ const Section = styled.div`
 		}
 
 		h2 {
+			/* width: 50%; */
 			font-size: var(--large-fs);
 			text-align: center;
 			color: #ccddef;
 			background-color: var(--dark-color);
 			padding: var(--spacing-1) var(--spacing-5);
-			margin: 2% 30%;
+			margin: 0 var(--spacing-20);
 			font-weight: 700;
 
 			@media (min-width: 1400px) {
@@ -117,8 +120,6 @@ const Section = styled.div`
 
 			@media (max-width: 500px) {
 				font-size: var(--medium-fs);
-				text-align: center;
-				color: #ccddef;
 				background-color: var(--dark-color);
 				padding: var(--spacing-1) 0%;
 				margin: var(--spacing-2) var(--spacing-20);
@@ -129,6 +130,7 @@ const Section = styled.div`
 			font-size: var(--medium-fs);
 			margin: var(--spacing-5) 0;
 			line-height: 1.5;
+			text-align: left;
 
 			a {
 				color: #f5172d;
