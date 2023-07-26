@@ -30,17 +30,17 @@ function Navigation() {
 				<nav className="nav nav">
 					<ul className={showNav ? "navItems" : "mobile-nav "}>
 						<li>
-							<a className="navLink" href="index.html">
+							<a className="navLink" onClick={handleMenu} href="index.html">
 								Home
 							</a>
 						</li>
 						<li>
-							<a className="navLink" href="#about">
+							<a className="navLink" href="#about" onClick={handleMenu}>
 								About
 							</a>
 						</li>
 						<li>
-							<a className="navLink" href="#footer">
+							<a className="navLink" href="#footer" onClick={handleMenu}>
 								Contact
 							</a>
 						</li>

@@ -46,9 +46,23 @@ const Section = styled.section`
 			position: absolute;
 			top: 0;
 			left: 0;
-			width: 40%;
-			height: 40%;
+
 			padding: 5% 2rem;
+		}
+
+		@media (max-width: 800px) {
+			background-color: #0e0c0c49;
+			width: 100%;
+			height: 100vh;
+			padding: 40% 2rem;
+		}
+
+		@media (max-width: 500px) {
+			padding-top: var(--spacing-70);
+		}
+
+		@media (max-width: 500px) {
+			padding-top: var(--spacing-130);
 		}
 
 		nav {
@@ -72,17 +86,6 @@ const Section = styled.section`
 			}
 		}
 
-		@media (max-width: 800px) {
-			background-color: #0e0c0c49;
-			width: 100%;
-			height: 100vh;
-			padding: 70% 2rem;
-		}
-
-		@media (max-width: 400px) {
-			padding: 25% 1rem;
-		}
-
 		h1 {
 			font-size: var(--semiextralarge-fs);
 			padding-top: 5%;
@@ -97,9 +100,8 @@ const Section = styled.section`
 			@media (min-width: 800px) {
 				font-size: var(--extralarge-fs);
 			}
-
-			@media (max-width: 500px) {
-				padding-top: var(--spacing-130);
+			@media (max-width: 799px) {
+				padding-top: 0;
 			}
 		}
 
