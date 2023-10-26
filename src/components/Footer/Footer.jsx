@@ -121,6 +121,7 @@ const Footer = styled.footer`
 				.attribute {
 					color: #ccddef;
 					margin: 3rem 0;
+					font-size: var(--medium-fs);
 
 					a {
 						color: #ccddef;

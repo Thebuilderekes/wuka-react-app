@@ -17,22 +17,14 @@ function About() {
 					WUKA. With the release of his highly anticipated debut album{" "}
 					<a href="https://spacefly.lnk.to/rigel" target="_blank">
 						"Rigel"
-					</a>
-					, he invites listeners on an extraordinary musical journey that
-					transcends genres and captivates hearts. This groundbreaking
-					collection showcases his unique artistry, effortlessly blending
-					elements of pop, rock, and alternative, creating an unmistakable sound
-					that resonates with audiences worldwide. <br />
-					<br />
-					With each captivating performance and every heartfelt lyric, his star
-					power continues to shine brighter, firmly establishing him as a force
-					to be reckoned with in the industry. Stay tuned as this musical
-					virtuoso continues to soar to new heights, enchanting audiences with
-					his soulful voice, mesmerizing compositions, and an unwavering
-					dedication to his craft. With his debut album as a testament to his
-					undeniable talent, he is poised to make an enduring impact on the
-					world of music, captivating hearts and captivating the hearts and
-					minds of music lovers everywhere.
+					</a>{" "}
+					&nbsp; he invites listeners on an extraordinary musical journey that
+					transcends genres and captivates hearts.
+				</p>
+				<p>
+					This groundbreaking collection showcases his unique artistry,
+					effortlessly blending elements of pop, rock, and alternative, creating
+					an unmistakable sound that resonates with audiences worldwide.
 				</p>
 			</div>
 		</Section>
@@ -83,10 +75,12 @@ const Section = styled.div`
 		text-align: center;
 
 		@media (min-width: 700px) {
+			width: 60%;
 			margin: 2% 15%;
 		}
 
 		@media (max-width: 699px) {
+			width: 90%;
 			padding: 5% 5%;
 			margin: 3% 5%;
 		}
@@ -128,7 +122,7 @@ const Section = styled.div`
 
 		p {
 			font-size: var(--medium-fs);
-			margin: var(--spacing-5) 0;
+			margin: var(--spacing-2) 0;
 			line-height: 1.5;
 			text-align: left;
 
@@ -137,7 +131,6 @@ const Section = styled.div`
 			}
 
 			@media (max-width: 520px) {
-				font-size: var(--default-fs);
 				margin: var(--spacing-5) 0%;
 			}
 		}

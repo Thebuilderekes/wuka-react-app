@@ -1,21 +1,35 @@
 import React from "react";
 import styled from "styled-components";
 import { FaBars, FaTimes, FaInstagram, FaFacebookF } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../../index.css";
 
 function Navigation() {
 	const [showNav, setShowNav] = useState(true);
 	const handleClick = () => setShowNav(!showNav);
-	// const [click, setClick] = useState(true);
-	const handleMenu = () => setShowNav(!showNav);
 	const iconStyle = {
 		color: "white",
 		fontSize: "2rem",
 	};
+
+	useEffect(() => {
+		const handleClickOutside = () => {
+			if (setShowNav(true)) {
+				console.log("clicked outside");
+				setShowNav(false);
+			}
+		};
+
+		document.addEventListener("mousedown", handleClickOutside);
+
+		return () => {
+			document.removeEventListener("mousedown", handleClickOutside);
+		};
+	}, [showNav]);
+
 	return (
 		<Header className="header">
-			<div className={showNav ? "nav-container" : "show-mobile-menu"}>
+			<div className={showNav ? "show-desktop-menu" : "show-mobile-menu"}>
 				<nav className="social-icons">
 					<a
 						href="https://instagram.com/denwuka"
@@ -95,7 +109,7 @@ const Header = styled.header`
 	}
 	/*TODO: end */
 
-	.nav-container {
+	.show-desktop-menu {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
