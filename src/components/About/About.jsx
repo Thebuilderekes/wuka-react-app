@@ -127,7 +127,7 @@ const Section = styled.div`
 			color: var(--dark-color);
 
 			a {
-				color: #1e0fee;
+				color: #ee0f64;
 			}
 
 			@media (max-width: 520px) {
