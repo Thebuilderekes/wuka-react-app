@@ -10,10 +10,12 @@
 	--large-fs: 3rem /*48px*/;
 	--semi-large-fs: 1.875rem /*30px*/;
 	--medium-fs: 1.5rem; /*24px*/
-	--semi-medium-fs: 1.125rem; /*18px*/
+	--semi-medium-fs: 1.2rem; /*18px*/
 	--default-fs: 1rem; /*16px*/
 	--dark-color: #181b1b;
-
+	--pink-color: #b75a64;
+	--cream-color: #b4ab98;
+	--text-color: #ccddef;
 	--spacing-1: 1%;
 	--spacing-2: 2%;
 	--spacing-3: 3%;
@@ -22,12 +24,13 @@
 	--spacing-10: 10%;
 	--spacing-20: 20%;
 	--spacing-25: 25%;
+	--spacing-40: 40%;
 	--spacing-50: 50%;
 	--spacing-60: 60%;
 	--spacing-70: 70%;
 	--spacing-80: 80%;
 	--spacing-100: 100%;
-
+	--spacing-110: 110%;
 	--spacing-130: 130%;
 }
 
@@ -38,7 +41,6 @@ html {
 
 body {
 	width: 100%;
-	height: 100%;
 	list-style: none;
 	background-color: var(--dark-color);
 }

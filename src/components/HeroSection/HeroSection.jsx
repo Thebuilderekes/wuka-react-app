@@ -47,48 +47,23 @@ const Section = styled.section`
 			top: 0;
 			left: 0;
 
-			padding: 5% 2rem;
+			padding: var(--spacing-5) 2rem;
 		}
 
 		@media (max-width: 800px) {
 			background-color: #0e0c0c49;
 			width: 100%;
 			height: 100vh;
-			padding: 40% 2rem;
+			padding: var(--spacing-40) 2rem;
 		}
 
 		@media (max-width: 500px) {
-			padding-top: var(--spacing-70);
-		}
-
-		@media (max-width: 500px) {
-			padding-top: var(--spacing-130);
-		}
-
-		nav {
-			a {
-				font-size: var(--large-fs);
-				color: #ffffff;
-				background-color: var(--dark-color);
-				padding: 10px;
-				text-decoration: none;
-				&:hover {
-					color: #cf3259;
-					background-color: #f5f5f5;
-					box-shadow: -12px 10px 67px 0px rgba(0, 0, 0, 0.75);
-					-webkit-box-shadow: -12px 10px 67px 0px rgba(0, 0, 0, 0.75);
-					-moz-box-shadow: -12px 10px 67px 0px rgba(0, 0, 0, 0.75);
-				}
-
-				@media (max-width: 500px) {
-					font-size: var(--medium-fs);
-				}
-			}
+			padding-top: var(--spacing-110);
 		}
 
 		h1 {
 			font-size: var(--semiextralarge-fs);
-			padding-top: 5%;
+			padding-top: var(--spacing-5);
 			z-index: 10;
 			background-color: #ffffff7e;
 			-webkit-background-clip: text;
@@ -106,7 +81,7 @@ const Section = styled.section`
 		}
 
 		h2 {
-			margin-bottom: 5%;
+			margin: var(--spacing-10) 0;
 			z-index: 10;
 			font-size: var(--large-fs);
 			background-color: #ffffff7e;
@@ -123,31 +98,25 @@ const Section = styled.section`
 			}
 		}
 
-		ul {
-			li {
-				list-style: none;
-				padding: 10px 0;
-
-				a {
+		nav {
+			a {
+				font-size: var(--large-fs);
+				color: var(--text-color);
+				background-color: var(--dark-color);
+				padding: 10px 15px;
+				border-radius: 15px;
+				text-decoration: none;
+				transition: background-color 0.2s ease-in-out;
+				&:hover {
 					color: #cf3259;
-					text-decoration: none;
-					box-shadow: inset 0 0 0 0 #636363;
-					margin: 0 -0.25rem;
-					padding: 0 0.25rem;
-					transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-					font-size: 24px;
-					font-family: "Cinzel";
-					font-weight: 700;
-					transition: 1s all;
-
-					@media (max-width: 400px) {
-						font-size: 16px;
-					}
+					background-color: var(--text-color);
+					box-shadow: -12px 10px 67px 0px rgba(0, 0, 0, 0.75);
+					-webkit-box-shadow: -12px 10px 67px 0px rgba(0, 0, 0, 0.75);
+					-moz-box-shadow: -12px 10px 67px 0px rgba(0, 0, 0, 0.75);
 				}
 
-				a:hover {
-					box-shadow: inset 10px 0 10px 0 #636363;
-					color: #000000;
+				@media (max-width: 500px) {
+					font-size: var(--medium-fs);
 				}
 			}
 		}

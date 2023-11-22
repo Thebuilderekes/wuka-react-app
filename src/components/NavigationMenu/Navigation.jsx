@@ -1,198 +1,235 @@
-import React from "react";
-import styled from "styled-components";
-import { FaBars, FaTimes, FaInstagram, FaFacebookF } from "react-icons/fa";
 import { useState, useEffect } from "react";
-import "../../index.css";
+import { FaBars, FaTimes } from "react-icons/fa";
+import styled from "styled-components";
 
-function Navigation() {
-	const [showNav, setShowNav] = useState(true);
-	const handleClick = () => setShowNav(!showNav);
+export default function Navigation() {
 	const iconStyle = {
 		color: "white",
 		fontSize: "2rem",
 	};
+	const [navb, setNavb] = useState(true);
+	const [click, setClick] = useState(true);
+	const [isVisible, setIsVisible] = useState(true);
+	const [previousScrollPosition, setPreviousScrollPosition] = useState(0);
+
+	const handleClick = () => setNavb(!navb);
+	const handleMenu = () => setNavb(!navb);
 
 	useEffect(() => {
-		const handleClickOutside = () => {
-			if (setShowNav(true)) {
-				console.log("clicked outside");
-				setShowNav(false);
-			}
+		const handleScroll = () => {
+			const currentScrollPosition = window.scrollY;
+			if (currentScrollPosition > 2000) {
+				setPreviousScrollPosition(currentScrollPosition);
+				setIsVisible(false);
+			} else if (currentScrollPosition < 2000) setIsVisible(true);
 		};
 
-		document.addEventListener("mousedown", handleClickOutside);
-
+		window.addEventListener("scroll", handleScroll);
 		return () => {
-			document.removeEventListener("mousedown", handleClickOutside);
+			window.removeEventListener("scroll", handleScroll);
 		};
-	}, [showNav]);
+	}, [previousScrollPosition]);
 
 	return (
-		<Header className="header">
-			<div className={showNav ? "show-desktop-menu" : "show-mobile-menu"}>
-				<nav className="social-icons">
-					<a
-						href="https://instagram.com/denwuka"
-						aria-label="instagram icon to page"
-					>
-						<FaInstagram style={iconStyle} />
-					</a>
-					<a href="" aria-label="facebook icon to page">
-						<FaFacebookF style={iconStyle} />
-					</a>
-				</nav>
-				<nav className="nav nav">
-					<ul className={showNav ? "navItems" : "mobile-nav "}>
-						<li>
-							<a className="navLink" href="index.html">
-								Home
+		<>
+			{isVisible && (
+				<Header className="navbar header">
+					<div className="nav-container">
+						<div className="social-media-icons">
+							<a className="logo" aria-label="home" href="/" target="_blank">
+								WUKA
 							</a>
-						</li>
-						<li>
-							<a className="navLink" href="#about">
-								About
-							</a>
-						</li>
-						<li>
-							<a className="navLink" href="#footer">
-								Contact
-							</a>
-						</li>
-					</ul>
-				</nav>
-			</div>
-			{/* Navigation toggle button */}
-			<button
-				className="btn"
-				role="navigation"
-				aria-label="navigation toggle button"
-				onClick={handleClick}
-			>
-				{showNav ? <FaBars style={iconStyle} /> : <FaTimes style={iconStyle} />}
-				{/* when the setShowNav(showNav) is true, it means that the mobile navigation is closed indicating mobile hamburger icon is displayed to allow user click/tap open the menu is in display.
-          However, when setShowNav(!showNav) is false it means that the mobile navigation is not closed but the close menu icon is now in display to allow user click/tap to close the menu  (false) */}
-			</button>
-		</Header>
+						</div>
+						<nav className="desktop-nav nav">
+							<ul className="desktop-navItems">
+								<li>
+									<a className="desktop-navLink" href="/">
+										Home
+									</a>
+								</li>
+								<li>
+									<a className="desktop-navLink" href="#about">
+										About
+									</a>
+								</li>
+
+								<li>
+									<a className="desktop-navLink" href="#footer">
+										Contact
+									</a>
+								</li>
+							</ul>
+						</nav>
+
+						<button
+							className="nav-toggler"
+							role="navigation"
+							aria-label="menu"
+							onClick={handleClick}
+						>
+							{!navb ? (
+								<FaTimes style={iconStyle} />
+							) : (
+								<FaBars style={iconStyle} />
+							)}
+						</button>
+					</div>
+
+					<nav className="mobile-nav nav">
+						<ul
+							className={
+								!navb || !click ? "display-mobile-nav" : "hide-mobile-nav"
+							}
+						>
+							<li>
+								{" "}
+								<a className="mobile-navLink" onClick={handleMenu} href="/">
+									Home
+								</a>
+							</li>
+
+							<li>
+								{" "}
+								<a
+									className="mobile-navLink"
+									onClick={handleMenu}
+									href="#about"
+								>
+									About
+								</a>
+							</li>
+
+							<li>
+								<a
+									className="mobile-navLink"
+									onClick={handleMenu}
+									href="#footer"
+								>
+									Contact
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</Header>
+			)}
+		</>
 	);
 }
 
-export default Navigation;
-
-const Header = styled.header`
+const Header = styled.div`
 	background-color: var(--dark-color);
-	display: flex;
-	justify-content: space-between;
-	padding: 1rem 20px;
+	padding: 1rem 0;
 	width: 100%;
 	position: fixed;
 	z-index: 999;
+	font-family: "Crimson Text";
+	border-bottom: 1px solid rgb(56, 56, 56);
 
-	/*TODO: start: figure out why you have to style .social-icons and li here to  for mobile because it is not working down where it is suppose to be nested and styled, might have something to do with ::marker*/
-	.social-icons {
-		display: flex;
-		gap: 1rem;
+	.hide-mobile-nav {
+		opacity: 0;
+		display: none;
 	}
 
-	li {
-		list-style: none;
-
-		@media (max-width: 700px) {
-			margin: 20px 0;
-		}
-		a {
-			text-decoration: none;
-			color: #ffffff;
-			font-size: 1.2rem;
-			font-family: "Crimson Text";
-			text-transform: uppercase;
-		}
+	.logo {
+		color: var(--text-color);
+		font-size: var(--medium-fs);
+		text-decoration: none;
+		font-weight: 900;
 	}
-	/*TODO: end */
 
-	.show-desktop-menu {
+	.nav-container {
 		display: flex;
-		flex-direction: row;
 		justify-content: space-between;
-		width: 100%;
+		align-items: center;
+		padding: 0 2rem;
+		font-family: "Inter";
 
-		.show-mobile-menu {
+		.social-media-icons {
 			display: flex;
-			flex-direction: column;
-			padding: 0 20px;
+		}
 
-			@media (max-width: 1400px) {
-				flex-direction: row;
-			}
+		@media (max-width: 1400px) {
+			padding: 0 2rem;
 		}
 
 		@media (max-width: 780px) {
-			flex-direction: column;
+			padding: 0 1.5rem;
 		}
 
-		.social-icons {
-			display: flex;
+		//DESKTOP NAVIGATION STYLES
 
-			a {
-				text-decoration: none;
-				color: #ffffff;
-			}
-		}
-
-		.nav {
+		.desktop-nav {
 			display: none;
-			flex-direction: column;
-			list-style: none;
 
-			@media (min-width: 800px) {
-				display: block;
-			}
-
-			@media (max-width: 800px) {
-				padding: 100px 0;
-			}
-
-			.navItems {
+			.desktop-navItems {
 				display: flex;
-				flex-direction: row;
-				list-style: none;
-
-				@media (min-width: 800px) {
-					display: flex;
-					flex-direction: row;
-				}
-
 				li {
-					.navLink {
-						text-decoration: none;
+					list-style: none;
+					.desktop-navLink {
 						color: #ffffff;
-						padding: 20px 10px;
-						font-size: 1.2rem;
-						text-transform: uppercase;
+						padding: 0 10px;
+						font-size: var(--medium-fs);
 						cursor: pointer;
-						font-family: "Crimson Text";
-						transition: all 1000ms ease;
+						-webkit-transition: all 1000ms ease;
+						transition: all 500ms ease;
+						text-decoration: none;
 
 						&:hover {
-							color: #cf3259;
+							color: var(--pink-color);
 						}
 					}
 				}
 			}
+
+			@media (min-width: 800px) {
+				display: block;
+			}
+		}
+
+		button.nav-toggler {
+			display: none;
+			background-color: transparent;
+			color: var(--text-color);
+			font-weight: 600;
+			border: none;
+
+			@media (min-width: 800px) {
+				display: none;
+			}
+
+			@media (max-width: 799px) {
+				display: block;
+			}
+
+			img {
+				width: 100%;
+				height: 100%;
+			}
 		}
 	}
 
-	button {
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-start;
-		background-color: transparent;
-		margin: 0 10px;
-		color: #ffffff;
-		font-weight: 600;
-		border: none;
+	//MOBILE NAVIGATION STYLES
 
-		@media (min-width: 800px) {
-			display: none;
+	.mobile-nav {
+		.display-mobile-nav {
+			display: flex;
+			opacity: 1;
+			transition: opacity 1s, display 1s;
+			flex-direction: column;
+			align-items: center;
+			padding-top: 13%;
+			height: 100vh;
+
+			li {
+				padding: 2rem 0;
+				list-style: none;
+				.mobile-navLink {
+					font-size: var(--semi-large-fs);
+					color: var(--text-color);
+					text-decoration: none;
+				}
+			}
 		}
 	}
 `;
+//how to create a responsive navbar in react?

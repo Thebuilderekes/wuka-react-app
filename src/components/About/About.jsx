@@ -8,15 +8,15 @@ function About() {
 	return (
 		<Section className="about-section" id="about">
 			<img src={cartoonImg} alt="cartoon-like image of wuka" />
-			<div className="card   animate__animated animate__fadeIn animate__delay-4s ">
+			<div className="card ">
 				<h2 className="about-heading animate__animated animate__swing animate__infinite	infinite">
 					ABOUT
 				</h2>
-				<p className="  animate__animated animate__fadeIn animate__delay-5s ">
+				<p>
 					Introducing the mesmerizing melodies and soul-stirring compositions of
 					WUKA. With the release of his highly anticipated debut album{" "}
 					<a href="https://spacefly.lnk.to/rigel" target="_blank">
-						"Rigel"
+						"RIGEL"
 					</a>{" "}
 					&nbsp; he invites listeners on an extraordinary musical journey that
 					transcends genres and captivates hearts.
@@ -36,10 +36,10 @@ export default About;
 const Section = styled.div`
 	display: flex;
 	flex-direction: column;
-	z-index: 20;
+	gap: 2rem;
 	align-items: center;
-	background-color: #b75a64;
-	padding: 5%;
+	background-color: var(--pink-color);
+	padding: var(--spacing-5);
 	font-family: "Crimson Text";
 
 	@media (max-width: 800px) {
@@ -56,40 +56,39 @@ const Section = styled.div`
 		border-radius: 50%;
 
 		@media (max-width: 800px) {
-			margin: 8% 0;
+			margin: var(--spacing-8) 0;
 		}
 		@media (max-width: 400px) {
 			width: 150px;
 			height: 150px;
-			margin: 5% 0;
+			margin: var(--spacing-5) 0;
 		}
 	}
 
 	.card {
 		border-radius: 16px;
-		background-color: #b4ab98;
+		background-color: var(--cream-color);
 		box-shadow: 10px 10px 20px 0px rgba(99, 54, 58, 0.75);
 		-webkit-box-shadow: 10px 10px 20px 0px rgba(99, 54, 58, 0.75);
 		-moz-box-shadow: 10px 10px 20px 0px rgba(99, 54, 58, 0.75);
-		padding: 1% 5%;
+		padding: var(--spacing-1) var(--spacing-5);
 		text-align: center;
 
-		@media (min-width: 700px) {
+		@media (min-width: 1200px) {
 			width: 60%;
-			margin: 2% 15%;
 		}
 
 		@media (max-width: 699px) {
 			width: 90%;
-			padding: 5% 5%;
-			margin: 3% 5%;
+			padding: var(--spacing-5);
+			margin: var(--spacing-3) var(--spacing-5);
 		}
 
 		h2 {
 			/* width: 50%; */
 			font-size: var(--large-fs);
 			text-align: center;
-			color: #ccddef;
+			color: var(--text-color);
 			background-color: var(--dark-color);
 			padding: var(--spacing-1) var(--spacing-5);
 			margin: 0 var(--spacing-20);
@@ -106,7 +105,7 @@ const Section = styled.div`
 
 			@media (max-width: 600px) {
 				text-align: center;
-				color: #ccddef;
+				color: var(--text-color);
 				background-color: var(--dark-color);
 				padding: var(--spacing-1) var(--spacing-10);
 				margin: var(--spacing-2) var(--spacing-25);
@@ -125,12 +124,14 @@ const Section = styled.div`
 			margin: var(--spacing-2) 0;
 			line-height: 1.5;
 			text-align: left;
+			color: var(--dark-color);
 
 			a {
-				color: #f5172d;
+				color: #1e0fee;
 			}
 
 			@media (max-width: 520px) {
+				font-size: var(--semi-medium-fs);
 				margin: var(--spacing-5) 0%;
 			}
 		}

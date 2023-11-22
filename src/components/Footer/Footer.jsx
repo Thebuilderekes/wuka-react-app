@@ -8,12 +8,21 @@ function Foot() {
 	return (
 		<Footer>
 			<div className="container" id="footer">
-				<div className="footer-img">
-					<img src={wukaFooterImg} alt="wuka the artiste" />
+				<div className="footer-img-container">
+					<img
+						className="footer-img"
+						src={wukaFooterImg}
+						alt="wuka holding a boom radio with his back turned"
+					/>
 				</div>
 
 				<div className="follow animate__animated animate__fadeIn animate__delay-6s ">
-					<h3>FOLLOW WUKA</h3>
+					<blockquote>
+						"Music is the universal language of mankind."
+						<br />
+						Henry Wadsworth Longfellow
+					</blockquote>
+					<h3>Follow Wuka</h3>
 					<ul>
 						<li>
 							<a
@@ -27,17 +36,6 @@ function Foot() {
 						<li>
 							<a href="" aria-label="facebook icon to page">
 								<FaFacebookF style={iconStyle} />
-							</a>
-						</li>
-
-						<li>
-							<a
-								href=""
-								target="_blank"
-								rel="noopener noreferrer"
-								aria-label="twitter icon to page"
-							>
-								<FaTwitter style={iconStyle} />
 							</a>
 						</li>
 					</ul>
@@ -67,38 +65,49 @@ const Footer = styled.footer`
 	.container {
 		width: 100%;
 		display: flex;
+		align-items: flex-end;
 		overflow-x: hidden;
-		font-family: "Cinzel";
+		font-family: "Crimson Text";
+		color: var(--text-color);
 
 		@media (max-width: 800px) {
 			flex-direction: column;
 
-			.footer-img {
+			.footer-img-container {
 				padding: 0;
+				display: flex;
 				margin: 0;
 				width: 100%;
+				height: 100%;
 
-				img {
+				.footer-img {
 					width: 100%;
 					padding: 0;
-					margin: 0;
+					object-fit: fill;
 				}
 			}
 		}
 
 		.follow {
+			padding-top: 50px;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
 			width: 100%;
-			background-color: #181b1b;
+			/* background-color: #349999; */
 
 			> h3 {
+				text-transform: uppercase;
 				margin: 3rem 0;
 				font-size: var(--large-fs);
 				font-weight: 600;
-				color: #ccddef;
+
+				text-align: center;
+			}
+
+			blockquote {
+				font-size: var(--medium-fs);
 				text-align: center;
 			}
 			ul {
@@ -119,12 +128,12 @@ const Footer = styled.footer`
 
 			.attribution {
 				.attribute {
-					color: #ccddef;
+					color: var(--text-color);
 					margin: 3rem 0;
 					font-size: var(--medium-fs);
 
 					a {
-						color: #ccddef;
+						color: var(--text-color);
 					}
 				}
 			}
