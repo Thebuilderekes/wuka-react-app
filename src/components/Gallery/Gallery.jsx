@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import "./gallery.css";
 
 const images = [
-	"../../src/assets/img/wuka-gal1.jpg",
-	"../../src/assets/img/wuka-gal2.jpg",
+	"./src/assets/img/wuka-gal1.jpg",
+	"./src/assets/img/wuka-gal2.jpg",
 ];
 
 function Gallery() {
