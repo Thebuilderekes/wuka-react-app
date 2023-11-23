@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import "./gallery.css";
+import wukaphoto1 from "../../assets/img/wuka-gal1.jpg";
+import wukaphoto2 from "../../assets/img/wuka-gal2.jpg";
 
-const images = [
-	"./src/assets/img/wuka-gal1.jpg",
-	"./src/assets/img/wuka-gal2.jpg",
-];
+const images = [wukaphoto1, wukaphoto2];
 
 function Gallery() {
 	const [currentIndex, setCurrentIndex] = useState(0);
