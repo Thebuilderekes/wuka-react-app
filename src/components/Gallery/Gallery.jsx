@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import "./gallery.css";
+import styled from "styled-components";
+// import "./gallery.css";
 import wukaphoto1 from "../../assets/img/wuka-gal1.jpg";
 import wukaphoto2 from "../../assets/img/wuka-gal2.jpg";
 
@@ -19,7 +20,7 @@ function Gallery() {
 	}, []); // Empty dependency array ensures the effect runs only once on mount
 
 	return (
-		<div className="gallery-container">
+		<Section className="gallery-container">
 			<div className="dark-backdrop">
 				<img
 					src={images[currentIndex]}
@@ -27,8 +28,34 @@ function Gallery() {
 					className="gallery-img"
 				/>
 			</div>
-		</div>
+		</Section>
 	);
 }
 
 export default Gallery;
+
+const Section = styled.section`
+	position: relative;
+	width: 100%;
+	height: 60vh;
+	overflow: hidden;
+	z-index: 666;
+
+	.dark-backdrop {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+
+		.gallery-img {
+			z-index: -1;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: top center;
+			filter: brightness(95%);
+		}
+	}
+`;
