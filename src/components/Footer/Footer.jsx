@@ -113,7 +113,6 @@ const Footer = styled.footer`
 			> h3 {
 				text-transform: uppercase;
 				margin: 3rem 0;
-				font-size: var(--medium-fs);
 				font-weight: 600;
 				color: var(--text-color);
 				text-align: center;
@@ -123,6 +122,10 @@ const Footer = styled.footer`
 				font-size: var(--extra-large-fs);
 
 				text-align: center;
+
+				@media (max-width: 500px) {
+					font-size: var(--large-fs);
+				}
 			}
 
 			blockquote {
