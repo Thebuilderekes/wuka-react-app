@@ -67,9 +67,7 @@ const Section = styled.section`
 		text-transform: uppercase;
 		letter-spacing: 0.03em;
 		text-shadow: -0.09em 0 0 #f22613, 0.09em 0 0 #02a9be;
-		//color: var(--pink-color);
 		font-size: var(--extra-large-fs);
-		//font-weight: 800;
 
 		@media (max-width: 1030px) {
 			font-size: var(--large-fs);

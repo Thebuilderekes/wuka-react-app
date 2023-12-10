@@ -1,14 +1,25 @@
 import React from "react";
+import { useRef } from "react";
 import "../../index.css";
 import cartoonImg from "../../assets/img/cartoon-img.png";
 import styled from "styled-components";
 import "animate.css";
+import { useScroll, motion } from "framer-motion";
 
 function About() {
+	const ref = useRef(null);
+	const { scrollYProgress } = useScroll({
+		target: ref,
+		offset: ["0 1", "0.75 1"],
+	});
 	return (
 		<Section className="about-section" id="about">
 			<img src={cartoonImg} alt="cartoon-like image of wuka" />
-			<div className="card ">
+			<motion.section
+				className="card"
+				ref={ref}
+				style={{ scale: scrollYProgress, opacity: scrollYProgress }}
+			>
 				<h2 className="about-heading animate__animated animate__swing animate__infinite	infinite">
 					ABOUT
 				</h2>
@@ -26,7 +37,7 @@ function About() {
 					effortlessly blending elements of pop, rock, and alternative, creating
 					an unmistakable sound that resonates with audiences worldwide.
 				</p>
-			</div>
+			</motion.section>
 		</Section>
 	);
 }
@@ -76,7 +87,7 @@ const Section = styled.div`
 		}
 
 		@media (max-width: 699px) {
-			width: 90%;
+			width: 100%;
 			padding: var(--spacing-5);
 			margin: var(--spacing-3) var(--spacing-5);
 		}
