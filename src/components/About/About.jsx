@@ -4,7 +4,7 @@ import "../../index.css";
 import cartoonImg from "../../assets/img/cartoon-img.png";
 import styled from "styled-components";
 import "animate.css";
-import { useScroll, motion } from "framer-motion";
+import { useScroll, useTransform, motion } from "framer-motion";
 
 function About() {
 	const ref = useRef(null);
@@ -12,13 +12,15 @@ function About() {
 		target: ref,
 		offset: ["0 1", "0.75 1"],
 	});
+	const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+	const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
 	return (
 		<Section className="about-section" id="about">
 			<img src={cartoonImg} alt="cartoon-like image of wuka" />
 			<motion.section
 				className="card"
 				ref={ref}
-				style={{ scale: scrollYProgress, opacity: scrollYProgress }}
+				style={{ scale: scaleProgress, opacity: opacityProgress }}
 			>
 				<h2 className="about-heading animate__animated animate__swing animate__infinite	infinite">
 					ABOUT
