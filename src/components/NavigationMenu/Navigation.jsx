@@ -10,25 +10,32 @@ export default function Navigation() {
 	const [navb, setNavb] = useState(true);
 	const [click, setClick] = useState(true);
 	const [isVisible, setIsVisible] = useState(true);
+	const [isOpen, setIsOpen] = useState(false);
 	const [previousScrollPosition, setPreviousScrollPosition] = useState(0);
+	const [currentScrollPosition, setcurrentScrollPosition] = useState(
+		window.scrollY
+	);
 
-	const handleClick = () => setNavb(!navb);
+	function handleClick() {
+		setNavb(!navb);
+		navb ? setIsOpen(true) : setIsOpen(false);
+	}
 	const handleMenu = () => setNavb(!navb);
 
 	useEffect(() => {
 		const handleScroll = () => {
 			const currentScrollPosition = window.scrollY;
-			if (currentScrollPosition > 1000) {
+			if (currentScrollPosition >= 1000) {
 				setPreviousScrollPosition(currentScrollPosition);
 				setIsVisible(false);
 			} else if (currentScrollPosition < 1000) setIsVisible(true);
 		};
-
+		console.log("working");
 		window.addEventListener("scroll", handleScroll);
 		return () => {
 			window.removeEventListener("scroll", handleScroll);
 		};
-	}, [previousScrollPosition]);
+	}, [currentScrollPosition]);
 
 	return (
 		<>
@@ -63,8 +70,9 @@ export default function Navigation() {
 
 						<button
 							className="nav-toggler"
-							role="navigation"
+							role="navigation toggle"
 							aria-label="menu"
+							aria-expanded={isOpen}
 							onClick={handleClick}
 						>
 							{!navb ? (

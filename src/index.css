@@ -16,6 +16,7 @@
 
 	/*colors*/
 	--dark-color: #181b1b;
+	--mid-dark-color: #1d2020;
 	--pink-color: #b75a64;
 	--dark-pink-color: #ee0f64;
 	--cream-color: #b4ab98;
@@ -48,9 +49,10 @@ html {
 }
 
 body {
+	background: var(--dark-color);
 	width: 100%;
+	min-height: 100%;
 	list-style: none;
-	background-color: var(--dark-color);
 }
 
 a {

@@ -13,7 +13,7 @@ function Gallery() {
 		const intervalId = setInterval(() => {
 			// Increment currentIndex, and loop back to 0 when reaching the end
 			setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-		}, 2000); // Change the delay to adjust the slideshow speed
+		}, 3000); // Change the delay to adjust the slideshow speed
 
 		// Clear the interval when the component is unmounted
 		return () => clearInterval(intervalId);
@@ -21,13 +21,11 @@ function Gallery() {
 
 	return (
 		<Section className="gallery-container">
-			<div className="dark-backdrop">
-				<img
-					src={images[currentIndex]}
-					alt={`Image ${currentIndex + 1}`}
-					className="gallery-img"
-				/>
-			</div>
+			<img
+				src={images[currentIndex]}
+				alt={`Wuka wearing an afro hair style ${currentIndex + 1}`}
+				className="gallery-img"
+			/>
 		</Section>
 	);
 }
@@ -41,21 +39,12 @@ const Section = styled.section`
 	overflow: hidden;
 	z-index: 666;
 
-	.dark-backdrop {
-		position: absolute;
-		top: 0;
-		left: 0;
-		bottom: 0;
+	.gallery-img {
+		z-index: -1;
 		width: 100%;
 		height: 100%;
-
-		.gallery-img {
-			z-index: -1;
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			object-position: top center;
-			filter: brightness(95%);
-		}
+		object-fit: cover;
+		object-position: top center;
+		filter: brightness(95%);
 	}
 `;

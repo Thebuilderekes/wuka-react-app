@@ -1,10 +1,10 @@
 import React from "react";
 import { useRef } from "react";
+import { useScroll, useTransform, motion } from "framer-motion";
 import "../../index.css";
 import cartoonImg from "../../assets/img/cartoon-img.png";
 import styled from "styled-components";
 import "animate.css";
-import { useScroll, useTransform, motion } from "framer-motion";
 
 function About() {
 	const ref = useRef(null);
@@ -17,7 +17,7 @@ function About() {
 	return (
 		<Section className="about-section" id="about">
 			<img src={cartoonImg} alt="cartoon-like image of wuka" />
-			<motion.section
+			<motion.div
 				className="card"
 				ref={ref}
 				style={{ scale: scaleProgress, opacity: opacityProgress }}
@@ -39,7 +39,7 @@ function About() {
 					effortlessly blending elements of pop, rock, and alternative, creating
 					an unmistakable sound that resonates with audiences worldwide.
 				</p>
-			</motion.section>
+			</motion.div>
 		</Section>
 	);
 }
@@ -51,7 +51,13 @@ const Section = styled.div`
 	flex-direction: column;
 	gap: 2rem;
 	align-items: center;
-	background-color: var(--pink-color);
+	background: rgb(183, 90, 100);
+	background: linear-gradient(
+		90deg,
+		rgba(183, 90, 100, 1) 0%,
+		rgba(111, 39, 46, 1) 0%,
+		rgba(183, 90, 100, 1) 31%
+	);
 	padding: var(--spacing-5);
 	font-family: "Crimson Text";
 	padding: var(--spacing-10);

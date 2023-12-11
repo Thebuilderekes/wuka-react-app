@@ -1,13 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-// import { createGlobalStyle } from "styled-components";
 import "../../index.css";
 import bgImg from "../../assets/img/wuka-2.webp";
 
 function HeroSection() {
 	return (
 		<Section className="hero-section" id="hero-section">
-			<div className="hero-section-text animate__animated animate__fadeIn  animate__delay-1s">
+			<div className="hero-section-text animate__animated animate__fadeInLeft  animate__delay-1s">
 				<div className="hero-section-text__container">
 					<h1 className="main-heading">WUKA</h1>
 					<h2 className="sub-heading">THE ALPHA</h2>
@@ -41,7 +40,7 @@ const Section = styled.section`
 		height: 100vh;
 
 		@media (max-width: 500px) {
-			background: #f3869830;
+			background: #f3869814;
 			justify-content: end;
 		}
 	}
@@ -76,6 +75,7 @@ const Section = styled.section`
 
 	.sub-heading {
 		font-size: var(--large-fs);
+		font-weight: 900;
 
 		@media (max-width: 1030px) {
 			font-size: var(--medium-fs);
