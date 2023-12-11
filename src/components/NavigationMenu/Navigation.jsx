@@ -18,10 +18,10 @@ export default function Navigation() {
 	useEffect(() => {
 		const handleScroll = () => {
 			const currentScrollPosition = window.scrollY;
-			if (currentScrollPosition > 2000) {
+			if (currentScrollPosition > 1000) {
 				setPreviousScrollPosition(currentScrollPosition);
 				setIsVisible(false);
-			} else if (currentScrollPosition < 2000) setIsVisible(true);
+			} else if (currentScrollPosition < 1000) setIsVisible(true);
 		};
 
 		window.addEventListener("scroll", handleScroll);
@@ -141,7 +141,7 @@ const Header = styled.div`
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding: 0 2rem;
+		padding: 0.8rem 2rem;
 		font-family: "Inter";
 
 		.social-media-icons {
@@ -159,6 +159,8 @@ const Header = styled.div`
 		//DESKTOP NAVIGATION STYLES
 
 		.desktop-nav {
+			transition-timing-function: ease-in;
+			transition: 0.5s;
 			display: none;
 
 			.desktop-navItems {
@@ -166,7 +168,7 @@ const Header = styled.div`
 				li {
 					list-style: none;
 					.desktop-navLink {
-						color: var(--text-color);
+						color: var(--pink-color);
 						padding: 0 10px;
 						font-size: var(--medium-fs);
 						cursor: pointer;
@@ -175,7 +177,7 @@ const Header = styled.div`
 						text-decoration: none;
 
 						&:hover {
-							color: var(--pink-color);
+							color: var(--text-color);
 						}
 					}
 				}

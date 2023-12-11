@@ -1,57 +1,58 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
 }
 :root {
-  --extra-large-fs: 9rem; /*144px; */
-  --semi-extra-large-fs: 4.375rem; /*70px;  */
-  --large-fs: 3rem /*48px*/;
-  --semi-large-fs: 1.875rem /*30px*/;
-  --medium-fs: 1.5rem; /*24px*/
-  --semi-medium-fs: 1.2rem; /*18px*/
-  --default-fs: 1rem; /*16px*/
+	--extra-large-fs: 9rem; /*144px; */
+	--semi-extra-large-fs: 4.375rem; /*70px;  */
+	--mid-extra-large-fs: 2rem; /*32rem*/
+	--large-fs: 3rem /*48px*/;
+	--semi-large-fs: 1.875rem /*30px*/;
+	--medium-fs: 1.5rem; /*24px*/
+	--semi-medium-fs: 1.2rem; /*18px*/
+	--default-fs: 1rem; /*16px*/
 
-  /*colors*/
-  --dark-color: #181b1b;
-  --pink-color: #b75a64;
-  --dark-pink-color: #ee0f64;
-  --cream-color: #b4ab98;
-  --text-color: #ccddef;
+	/*colors*/
+	--dark-color: #181b1b;
+	--pink-color: #b75a64;
+	--dark-pink-color: #ee0f64;
+	--cream-color: #b4ab98;
+	--text-color: #ccddef;
 
-  /*spacing*/
-  --spacing-1: 1%;
-  --spacing-2: 2%;
-  --spacing-3: 3%;
-  --spacing-5: 5%;
-  --spacing-7: 7%;
-  --spacing-8: 8%;
-  --spacing-10: 10%;
-  --spacing-15: 15%;
-  --spacing-20: 20%;
-  --spacing-25: 25%;
-  --spacing-40: 40%;
-  --spacing-50: 50%;
-  --spacing-60: 60%;
-  --spacing-70: 70%;
-  --spacing-80: 80%;
-  --spacing-100: 100%;
-  --spacing-110: 110%;
-  --spacing-130: 130%;
+	/*spacing*/
+	--spacing-1: 1%;
+	--spacing-2: 2%;
+	--spacing-3: 3%;
+	--spacing-5: 5%;
+	--spacing-7: 7%;
+	--spacing-8: 8%;
+	--spacing-10: 10%;
+	--spacing-15: 15%;
+	--spacing-20: 20%;
+	--spacing-25: 25%;
+	--spacing-40: 40%;
+	--spacing-50: 50%;
+	--spacing-60: 60%;
+	--spacing-70: 70%;
+	--spacing-80: 80%;
+	--spacing-100: 100%;
+	--spacing-110: 110%;
+	--spacing-130: 130%;
 }
 
 html {
-  width: 100%;
-  height: 100%;
+	width: 100%;
+	height: 100%;
 }
 
 body {
-  width: 100%;
-  list-style: none;
-  background-color: var(--dark-color);
+	width: 100%;
+	list-style: none;
+	background-color: var(--dark-color);
 }
 
 a {
-  text-decoration: none;
+	text-decoration: none;
 }

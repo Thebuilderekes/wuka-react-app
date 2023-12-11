@@ -37,7 +37,7 @@ export default Gallery;
 const Section = styled.section`
 	position: relative;
 	width: 100%;
-	height: 60vh;
+	height: 70vh;
 	overflow: hidden;
 	z-index: 666;
 

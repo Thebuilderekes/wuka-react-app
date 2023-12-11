@@ -6,30 +6,32 @@ import { FaInstagram, FaFacebookF } from "react-icons/fa";
 import wukaFooterImg from "../../assets/img/wuka-footer.jpg";
 
 function Foot() {
+	const herosection = "#hero-section";
 	const ref = useRef(null);
 	const { scrollYProgress } = useScroll({
 		target: ref,
-		offset: ["0 1", "1.25 1"],
+		offset: ["0 1", "1.15 1"],
 	});
 	return (
 		<Footer>
-			<div className="container" id="footer">
-				<div className="footer-img-container">
-					<img
-						className="footer-img"
-						src={wukaFooterImg}
-						alt="wuka holding a boom radio with his back turned"
-					/>
-				</div>
+			<div className="img-text__container" id="footer">
+				<img
+					className="footer-img"
+					src={wukaFooterImg}
+					alt="wuka holding a boom radio with his back turned"
+				/>
 
 				<motion.section
-					className="follow"
+					className="follow-text"
 					ref={ref}
 					style={{
 						scale: scrollYProgress,
 						opacity: scrollYProgress,
 					}}
 				>
+					<a className="back-to-top-btn" href={herosection}>
+						Back to top
+					</a>
 					<blockquote>
 						<p>"Music is the universal language of mankind." </p>
 						<br />
@@ -52,6 +54,7 @@ function Foot() {
 							</a>
 						</li>
 					</ul>
+
 					<div className="attribution">
 						<p className="attribute">
 							{" "}
@@ -75,10 +78,10 @@ export default Foot;
 
 const iconStyle = { color: "white", fontSize: "4rem" };
 const Footer = styled.footer`
-	.container {
+	.img-text__container {
 		width: 100%;
+		height: 100vh;
 		display: flex;
-		align-items: center;
 		overflow-x: hidden;
 		font-family: "Crimson Text";
 		color: var(--text-color);
@@ -86,30 +89,27 @@ const Footer = styled.footer`
 		@media (max-width: 800px) {
 			flex-direction: column;
 
-			.footer-img-container {
-				padding: 0;
-				display: flex;
-				margin: 0;
+			.footer-img {
 				width: 100%;
-				height: 100%;
-
-				.footer-img {
-					width: 100%;
-					padding: 0;
-					object-fit: fill;
-				}
+				padding: 0;
+				object-fit: fill;
 			}
 		}
 
-		.follow {
-			/* padding-top: 20px; */
+		.follow-text {
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
 			width: 100%;
-			/* background-color: #349999; */
 
+			.back-to-top-btn {
+				font-size: var(--medium-fs);
+				margin-bottom: var(--spacing-2);
+				background-color: var(--dark-pink-color);
+				color: #ffffff;
+				padding: var(--spacing-2);
+			}
 			> h3 {
 				text-transform: uppercase;
 				margin: 3rem 0;
@@ -120,8 +120,15 @@ const Footer = styled.footer`
 				letter-spacing: 0.03em;
 				text-shadow: -0.09em 0 0 #f22613, 0.09em 0 0 #02a9be;
 				font-size: var(--extra-large-fs);
-
 				text-align: center;
+
+				@media (max-width: 1240px) {
+					font-size: var(--mid-extra-large-fs);
+				}
+
+				@media (max-width: 1050px) {
+					font-size: var(--large-fs);
+				}
 
 				@media (max-width: 500px) {
 					font-size: var(--large-fs);

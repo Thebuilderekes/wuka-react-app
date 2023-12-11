@@ -6,7 +6,7 @@ import bgImg from "../../assets/img/wuka-2.webp";
 
 function HeroSection() {
 	return (
-		<Section className="hero-section">
+		<Section className="hero-section" id="hero-section">
 			<div className="hero-section-text animate__animated animate__fadeIn  animate__delay-1s">
 				<div className="hero-section-text__container">
 					<h1 className="main-heading">WUKA</h1>
