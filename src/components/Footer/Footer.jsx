@@ -1,4 +1,5 @@
-import { useState, useRef } from "react";
+import { useRef } from "react";
+import { Tooltip as ReactToolTip } from "react-tooltip";
 import { useScroll, useTransform, motion } from "framer-motion";
 import styled from "styled-components";
 import "../../index.css";
@@ -9,7 +10,6 @@ const iconStyle = { color: "var(--text-color)", fontSize: "4rem" };
 const socialLinks = [
 	{
 		url: "https://soundcloud.com/wuka7healpha/sets/rigel-933478488",
-
 		text: <FaSoundcloud style={iconStyle} />,
 		ariaLabel: "sound cloud icon to channel",
 		tooltip: "Sound cloud",
@@ -28,10 +28,6 @@ const socialLinks = [
 	},
 ];
 function Foot() {
-	const [showTooltip, setShowTooltip] = useState(false);
-
-	const handleMouseEnter = () => setShowTooltip(true);
-	const handleMouseLeave = () => setShowTooltip(false);
 	const ref = useRef(null);
 	const { scrollYProgress } = useScroll({
 		target: ref,
@@ -65,23 +61,13 @@ function Foot() {
 										aria-label={link.ariaLabel}
 										target="_blank"
 										rel="noreferrer noopener"
-										onMouseEnter={handleMouseEnter}
-										onMouseLeave={handleMouseLeave}
+										data-tooltip-id={link.tooltip}
+										data-tooltip-content={link.tooltip}
+										data-tooltip-place
 									>
 										{link.text}
-										{showTooltip && (
-											<span
-												style={{
-													position: "absolute",
-													backgroundColor: "black",
-													color: "white",
-													padding: "5px",
-												}}
-											>
-												{link.tooltip}
-											</span>
-										)}
 									</a>
+									<ReactToolTip id={link.tooltip} place="bottom-end" />
 								</li>
 							))}
 						</ul>
@@ -190,12 +176,6 @@ const Footer = styled.footer`
 					li {
 						list-style: none;
 						padding: 0 1rem;
-
-						a {
-							&:hover {
-								color: #cf3259;
-							}
-						}
 					}
 				}
 			}
