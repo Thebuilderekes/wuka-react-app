@@ -1,8 +1,10 @@
-import { useRef } from "react";
+import { useState, useRef } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
 import styled from "styled-components";
 import "../../index.css";
 import { FaInstagram, FaYoutube, FaSoundcloud } from "react-icons/fa";
+
+const herosection = "#hero-section";
 const iconStyle = { color: "var(--text-color)", fontSize: "4rem" };
 const socialLinks = [
 	{
@@ -25,9 +27,11 @@ const socialLinks = [
 		tooltip: "YouTube",
 	},
 ];
-
 function Foot() {
-	const herosection = "#hero-section";
+	const [showTooltip, setShowTooltip] = useState(false);
+
+	const handleMouseEnter = () => setShowTooltip(true);
+	const handleMouseLeave = () => setShowTooltip(false);
 	const ref = useRef(null);
 	const { scrollYProgress } = useScroll({
 		target: ref,
@@ -54,13 +58,32 @@ function Foot() {
 					</dt>
 					<dd>
 						<ul>
-							{socialLinks.map((link) => {
-								<li key={link.text}>
-									<a href={link.url} aria-label={link.ariaLabel}>
+							{socialLinks.map((link) => (
+								<li key={link.tooltip}>
+									<a
+										href={link.url}
+										aria-label={link.ariaLabel}
+										target="_blank"
+										rel="noreferrer noopener"
+										onMouseEnter={handleMouseEnter}
+										onMouseLeave={handleMouseLeave}
+									>
 										{link.text}
+										{showTooltip && (
+											<span
+												style={{
+													position: "absolute",
+													backgroundColor: "black",
+													color: "white",
+													padding: "5px",
+												}}
+											>
+												{link.tooltip}
+											</span>
+										)}
 									</a>
-								</li>;
-							})}
+								</li>
+							))}
 						</ul>
 					</dd>
 				</dl>
