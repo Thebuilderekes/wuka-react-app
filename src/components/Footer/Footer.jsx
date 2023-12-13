@@ -2,7 +2,29 @@ import { useRef } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
 import styled from "styled-components";
 import "../../index.css";
-import { FaInstagram, FaFacebookF } from "react-icons/fa";
+import { FaInstagram, FaYoutube, FaSoundcloud } from "react-icons/fa";
+const iconStyle = { color: "var(--text-color)", fontSize: "4rem" };
+const socialLinks = [
+	{
+		url: "https://soundcloud.com/wuka7healpha/sets/rigel-933478488",
+
+		text: <FaSoundcloud style={iconStyle} />,
+		ariaLabel: "sound cloud icon to channel",
+		tooltip: "Sound cloud",
+	},
+	{
+		url: "https://instagram.com/denwuka",
+		text: <FaInstagram style={iconStyle} />,
+		ariaLabel: "Instagram icon to channel",
+		tooltip: "Instagram",
+	},
+	{
+		url: "https://www.youtube.com/channel/UCti39pqcX9znmY2QPsM9rSw",
+		ariaLabel: "YouTube icon to channel",
+		text: <FaYoutube style={iconStyle} />,
+		tooltip: "YouTube",
+	},
+];
 
 function Foot() {
 	const herosection = "#hero-section";
@@ -32,20 +54,13 @@ function Foot() {
 					</dt>
 					<dd>
 						<ul>
-							<li>
-								<a
-									target="_blank"
-									href="https://instagram.com/denwuka"
-									aria-label="instagram icon to page"
-								>
-									<FaInstagram style={iconStyle} />
-								</a>
-							</li>
-							<li>
-								<a href="" aria-label="facebook icon to page">
-									<FaFacebookF style={iconStyle} />
-								</a>
-							</li>
+							{socialLinks.map((link) => {
+								<li key={link.text}>
+									<a href={link.url} aria-label={link.ariaLabel}>
+										{link.text}
+									</a>
+								</li>;
+							})}
 						</ul>
 					</dd>
 				</dl>
@@ -73,7 +88,6 @@ function Foot() {
 
 export default Foot;
 
-const iconStyle = { color: "var(--text-color)", fontSize: "4rem" };
 const Footer = styled.footer`
 	display: flex;
 	flex-direction: column;
