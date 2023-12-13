@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
 import styled from "styled-components";
 import "../../index.css";
-import { FaInstagram, FaFacebookF } from "react-icons/fa";
+import { FaInstagram, FaYoutube, FaSoundcloud } from "react-icons/fa";
 
 function Foot() {
 	const herosection = "#hero-section";
@@ -34,6 +34,14 @@ function Foot() {
 						<ul>
 							<li>
 								<a
+									href="https://soundcloud.com/wuka7healpha/sets/rigel-933478488"
+									aria-label="facebook icon to page"
+								>
+									<FaSoundcloud style={iconStyle} />
+								</a>
+							</li>
+							<li>
+								<a
 									target="_blank"
 									href="https://instagram.com/denwuka"
 									aria-label="instagram icon to page"
@@ -42,8 +50,11 @@ function Foot() {
 								</a>
 							</li>
 							<li>
-								<a href="" aria-label="facebook icon to page">
-									<FaFacebookF style={iconStyle} />
+								<a
+									href="https://www.youtube.com/channel/UCti39pqcX9znmY2QPsM9rSw"
+									aria-label="facebook icon to page"
+								>
+									<FaYoutube style={iconStyle} />
 								</a>
 							</li>
 						</ul>
