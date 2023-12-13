@@ -27,7 +27,7 @@ const socialLinks = [
 		tooltip: "YouTube",
 	},
 ];
-function Foot() {
+function Foot({ url, ariaLabel, text, tooltip }) {
 	const ref = useRef(null);
 	const { scrollYProgress } = useScroll({
 		target: ref,
