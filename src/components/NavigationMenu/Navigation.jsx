@@ -43,7 +43,12 @@ export default function Navigation() {
 				<Header className="navbar header">
 					<div className="nav-container">
 						<div className="social-media-icons">
-							<a className="logo" aria-label="home" href="/" target="_blank">
+							<a
+								className="logo"
+								aria-label="home page wuka"
+								href="/"
+								target="_blank"
+							>
 								WUKA
 							</a>
 						</div>
@@ -70,8 +75,8 @@ export default function Navigation() {
 
 						<button
 							className="nav-toggler"
-							role="navigation toggle"
-							aria-label="menu"
+							role="menu button"
+							aria-label="menu button"
 							aria-expanded={isOpen}
 							onClick={handleClick}
 						>

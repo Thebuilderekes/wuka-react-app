@@ -1,11 +1,33 @@
 import { useRef } from "react";
+import { Tooltip as ReactToolTip } from "react-tooltip";
 import { useScroll, useTransform, motion } from "framer-motion";
 import styled from "styled-components";
 import "../../index.css";
 import { FaInstagram, FaYoutube, FaSoundcloud } from "react-icons/fa";
 
-function Foot() {
-	const herosection = "#hero-section";
+const herosection = "#hero-section";
+const iconStyle = { color: "var(--text-color)", fontSize: "4rem" };
+const socialLinks = [
+	{
+		url: "https://soundcloud.com/wuka7healpha/sets/rigel-933478488",
+		text: <FaSoundcloud style={iconStyle} />,
+		ariaLabel: "sound cloud icon to channel",
+		tooltip: "Sound cloud",
+	},
+	{
+		url: "https://instagram.com/denwuka",
+		text: <FaInstagram style={iconStyle} />,
+		ariaLabel: "Instagram icon to channel",
+		tooltip: "Instagram",
+	},
+	{
+		url: "https://www.youtube.com/channel/UCti39pqcX9znmY2QPsM9rSw",
+		ariaLabel: "YouTube icon to channel",
+		text: <FaYoutube style={iconStyle} />,
+		tooltip: "YouTube",
+	},
+];
+function Foot({ url, ariaLabel, text, tooltip }) {
 	const ref = useRef(null);
 	const { scrollYProgress } = useScroll({
 		target: ref,
@@ -32,31 +54,22 @@ function Foot() {
 					</dt>
 					<dd>
 						<ul>
-							<li>
-								<a
-									href="https://soundcloud.com/wuka7healpha/sets/rigel-933478488"
-									aria-label="facebook icon to page"
-								>
-									<FaSoundcloud style={iconStyle} />
-								</a>
-							</li>
-							<li>
-								<a
-									target="_blank"
-									href="https://instagram.com/denwuka"
-									aria-label="instagram icon to page"
-								>
-									<FaInstagram style={iconStyle} />
-								</a>
-							</li>
-							<li>
-								<a
-									href="https://www.youtube.com/channel/UCti39pqcX9znmY2QPsM9rSw"
-									aria-label="facebook icon to page"
-								>
-									<FaYoutube style={iconStyle} />
-								</a>
-							</li>
+							{socialLinks.map((link) => (
+								<li key={link.tooltip}>
+									<a
+										href={link.url}
+										aria-label={link.ariaLabel}
+										target="_blank"
+										rel="noreferrer noopener"
+										data-tooltip-id={link.tooltip}
+										data-tooltip-content={link.tooltip}
+										data-tooltip-place
+									>
+										{link.text}
+									</a>
+									<ReactToolTip id={link.tooltip} place="bottom-end" />
+								</li>
+							))}
 						</ul>
 					</dd>
 				</dl>
@@ -84,7 +97,6 @@ function Foot() {
 
 export default Foot;
 
-const iconStyle = { color: "var(--text-color)", fontSize: "4rem" };
 const Footer = styled.footer`
 	display: flex;
 	flex-direction: column;
@@ -164,12 +176,6 @@ const Footer = styled.footer`
 					li {
 						list-style: none;
 						padding: 0 1rem;
-
-						a {
-							&:hover {
-								color: #cf3259;
-							}
-						}
 					}
 				}
 			}
