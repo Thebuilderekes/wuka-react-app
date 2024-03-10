@@ -84,7 +84,7 @@ function Foot({ url, ariaLabel, text, tooltip }) {
 				{" "}
 				Designed by{" "}
 				<a
-					href="https://twitter.com/iamthebuilder__"
+					href="https://www.linkedin.com/in/ekeopre-beredugo-204580111/"
 					target="_blank"
 					aria-label="link to website developer"
 				>
