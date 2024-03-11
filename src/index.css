@@ -4,6 +4,10 @@
 	box-sizing: border-box;
 	scroll-behavior: smooth;
 }
+
+::selection{
+	background-color: #b75a64;
+}
 :root {
 	--extra-large-fs: 9rem; /*144px; */
 	--semi-extra-large-fs: 4.375rem; /*70px;  */

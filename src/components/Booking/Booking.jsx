@@ -20,13 +20,13 @@ function CalendarDemo() {
 	const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
 
   return (
-    <Section className="booking-tour-container">
+    <Section className="booking" id="booking">
     <motion.div
     className="footer-text__container booking-container"
     ref={ref}
     style={{ scale: scaleProgress, opacity: opacityProgress }}
   >
-    <Article>
+    <Article >
    <h2 className="text-red-300">Booking and tours</h2>
     <Calendar
       mode="single"
@@ -59,9 +59,6 @@ const Article = styled.article`
  display: flex;
  justify-content: space-between;
  background-color: var(--grey-color);
- /* box-shadow: 0px 4px 5px 0px rgba(102,95,95,0.75);
--webkit-box-shadow: 0px 4px 5px 0px rgba(102,95,95,0.75);
--moz-box-shadow: 0px 4px 5px 0px rgba(102,95,95,0.75);  */
 -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
   -moz-box-shadow: rgba(0,0,0,0.3) 0 1px 3px;
   box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;

@@ -63,6 +63,14 @@ export default function Navigation() {
 										About
 									</a>
 								</li>
+								<li>
+								<a
+									className="desktop-navLink"
+									href="#booking"
+								>
+							   Booking	
+								</a>
+							</li>
 
 								<li>
 									<a className="desktop-navLink" href="#footer">
@@ -101,13 +109,21 @@ export default function Navigation() {
 							</li>
 
 							<li>
-								{" "}
 								<a
 									className="mobile-navLink"
 									onClick={handleMenu}
 									href="#about"
 								>
 									About
+								</a>
+							</li>
+							<li>
+								<a
+									className="mobile-navLink"
+									onClick={handleMenu}
+									href="#booking"
+								>
+							   Booking	
 								</a>
 							</li>
 
@@ -183,7 +199,6 @@ const Header = styled.div`
 					list-style: none;
 					.desktop-navLink {
 						color: var(--white-color);
-
 						padding: 0 10px;
 						font-size: var(--medium-fs);
 						cursor: pointer;
