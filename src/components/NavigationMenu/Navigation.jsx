@@ -30,7 +30,6 @@ export default function Navigation() {
 				setIsVisible(false);
 			} else if (currentScrollPosition < 1000) setIsVisible(true);
 		};
-		console.log("working");
 		window.addEventListener("scroll", handleScroll);
 		return () => {
 			window.removeEventListener("scroll", handleScroll);
@@ -148,6 +147,8 @@ const Header = styled.div`
 		font-size: var(--medium-fs);
 		text-decoration: none;
 		font-weight: 900;
+		font-family: 'Crimson Text';
+
 	}
 
 	.nav-container {

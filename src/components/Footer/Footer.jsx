@@ -124,7 +124,7 @@ const Footer = styled.footer`
 		}
 		
 		.back-to-top-btn:hover {
-			background-color: var(--light-pink-color);
+			background-color: var(--darker-pink-color);
 
 		}
 

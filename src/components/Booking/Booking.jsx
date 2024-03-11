@@ -1,6 +1,6 @@
 
 import * as React from "react"
-import { useRef } from "react";
+import { useRef, useState} from "react";
 
 
 import { Calendar } from "@/components/ui/calendar"
@@ -10,7 +10,7 @@ import { useScroll, useTransform, motion } from "framer-motion";
 
 
 function CalendarDemo() {
-  const [date, setDate] = React.useState(new Date());
+  const [date, setDate] = useState(new Date());
   const ref = useRef(null);
 	const { scrollYProgress } = useScroll({
 		target: ref,

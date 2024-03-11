@@ -735,11 +735,6 @@ body {
   background-color: hsl(var(--destructive));
 }
 
-.bg-lime-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(236 252 203 / var(--tw-bg-opacity));
-}
-
 .bg-primary {
   background-color: hsl(var(--primary));
 }
@@ -788,11 +783,6 @@ body {
   text-align: center;
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
 .text-\[0\.8rem\] {
   font-size: 0.8rem;
 }
@@ -800,10 +790,6 @@ body {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
-}
-
-.font-bold {
-  font-weight: 700;
 }
 
 .font-medium {
@@ -820,11 +806,6 @@ body {
 
 .text-accent-foreground {
   color: hsl(var(--accent-foreground));
-}
-
-.text-blue-100 {
-  --tw-text-opacity: 1;
-  color: rgb(219 234 254 / var(--tw-text-opacity));
 }
 
 .text-destructive-foreground {
@@ -846,11 +827,6 @@ body {
 .text-red-300 {
   --tw-text-opacity: 1;
   color: rgb(252 165 165 / var(--tw-text-opacity));
-}
-
-.text-red-50 {
-  --tw-text-opacity: 1;
-  color: rgb(254 242 242 / var(--tw-text-opacity));
 }
 
 .text-secondary-foreground {

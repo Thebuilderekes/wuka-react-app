@@ -101,10 +101,9 @@ const Section = styled.div`
 		}
 
 		h2 {
-			/* width: 50%; */
 			font-size: var(--large-fs);
 			text-align: center;
-			color: var(--white-color);
+			color: var(--text-color);
 			background-color: var(--dark-color);
 			padding: var(--spacing-1) var(--spacing-5);
 			margin: 0 var(--spacing-20);
@@ -121,7 +120,7 @@ const Section = styled.div`
 
 			@media (max-width: 600px) {
 				text-align: center;
-				color: var(--white-color);
+				color: var(--text-color);
 				background-color: var(--dark-color);
 				padding: var(--spacing-1) var(--spacing-10);
 				margin: var(--spacing-2) var(--spacing-25);
