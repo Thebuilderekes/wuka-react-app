@@ -13,9 +13,11 @@ function App() {
 		<div>
 			<Navigation />
 			<HeroSection />
+			<main>
 			<About />
 			<CalendarDemo/>
 			<Gallery />
+			</main>
 			<Foot />
 		</div>
 	);

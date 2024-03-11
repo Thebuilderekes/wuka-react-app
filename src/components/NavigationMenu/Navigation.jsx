@@ -144,7 +144,7 @@ export default function Navigation() {
 	);
 }
 
-const Header = styled.div`
+const Header = styled.header`
 	background-color: var(--dark-color);
 	padding: 1rem 0;
 	width: 100%;
