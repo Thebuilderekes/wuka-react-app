@@ -1,11 +1,9 @@
-import { useRef } from "react";
 import { Tooltip as ReactToolTip } from "react-tooltip";
-import { useScroll, useTransform, motion } from "framer-motion";
 import styled from "styled-components";
 import "../../index.css";
 import { FaInstagram, FaYoutube, FaSoundcloud } from "react-icons/fa";
+import { Fade } from "react-awesome-reveal";
 
-const herosection = "#hero-section";
 const iconStyle = { color: "var(--white-color)", fontSize: "4rem" };
 const socialLinks = [
 	{
@@ -28,25 +26,17 @@ const socialLinks = [
 	},
 ];
 function Foot({ url, ariaLabel, text, tooltip }) {
-	const ref = useRef(null);
-	const { scrollYProgress } = useScroll({
-		target: ref,
-		offset: ["0 1", "0.75 1"],
-	});
-	const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-	const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
 
 	return (
 		<Footer id="footer">
-			<motion.div
+      <Fade>
+			<div
 				className="footer-text__container"
-				ref={ref}
-				style={{ scale: scaleProgress, opacity: opacityProgress }}
 			>
-				<a className="back-to-top-btn" href={herosection}>
-					Back to top
+				<a className="back-to-top-btn" href={`${socialLinks[0].url}`}>
+					Stream Now
 				</a>
-				<dl>
+          				<dl>
 					<dt>
 						<h3>Follow Wuka</h3>
 					</dt>
@@ -72,7 +62,6 @@ function Foot({ url, ariaLabel, text, tooltip }) {
 					</dd>
 				</dl>
 
-			</motion.div>
 			<small className="attribute">
 				{" "}
 				Designed by{" "}
@@ -84,6 +73,9 @@ function Foot({ url, ariaLabel, text, tooltip }) {
 					The Builder
 				</a>{" "}
 			</small>
+
+			</div>
+      </Fade>
 		</Footer>
 	);
 }
@@ -91,26 +83,30 @@ function Foot({ url, ariaLabel, text, tooltip }) {
 export default Foot;
 
 const Footer = styled.footer`
+
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+  padding-top: var(--spacing-8) ;
+
+	font-family: "Crimson Text";
 	background: var(--dark-color);
 	width: 100%;
-	height: 100vh;
 
 	.footer-text__container {
 		display: flex;
 		flex-direction: column;
-		justify-content: space-around;
+		justify-content: space-between;
 		align-items: center;
 		width: 100%;
-		height: 100%;
 
-		@media (max-width: 900px) {
+/*		@media (max-width: 900px) {
 			margin: var(--spacing-10) 0;
 		}
+    */
 
 		@media (max-width: 500px) {
+
+     padding-top: var(--spacing-15) ;
 			padding-left: var(--spacing-2);
 			padding-right: var(--spacing-2);
 		}

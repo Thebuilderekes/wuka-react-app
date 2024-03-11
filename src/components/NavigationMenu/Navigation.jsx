@@ -8,7 +8,6 @@ export default function Navigation() {
 		fontSize: "2rem",
 	};
 	const [navb, setNavb] = useState(true);
-	const [click, setClick] = useState(true);
 	const [isVisible, setIsVisible] = useState(true);
 	const [isOpen, setIsOpen] = useState(false);
 	const [previousScrollPosition, setPreviousScrollPosition] = useState(0);
@@ -98,7 +97,7 @@ export default function Navigation() {
 					<nav className="mobile-nav nav">
 						<ul
 							className={
-								!navb || !click ? "display-mobile-nav" : "hide-mobile-nav"
+								!navb ? "display-mobile-nav" : "hide-mobile-nav"
 							}
 						>
 							<li>
@@ -146,7 +145,7 @@ export default function Navigation() {
 
 const Header = styled.header`
 	background-color: var(--dark-color);
-	padding: 1rem 0;
+	padding: 0.5rem 0;
 	width: 100%;
 	position: fixed;
 	z-index: 999;
@@ -172,7 +171,6 @@ const Header = styled.header`
 		justify-content: space-between;
 		align-items: center;
 		padding: 0.8rem 2rem;
-		font-family: "Inter";
 
 		.social-media-icons {
 			display: flex;

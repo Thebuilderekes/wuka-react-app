@@ -1,30 +1,17 @@
-
 import * as React from "react"
-import { useRef, useState} from "react";
-
-
+import {Zoom} from "react-awesome-reveal";
+import {useState} from "react";
 import { Calendar } from "@/components/ui/calendar"
 import styled from "styled-components";
-import { useScroll, useTransform, motion } from "framer-motion";
 
 
 
 function CalendarDemo() {
   const [date, setDate] = useState(new Date());
-  const ref = useRef(null);
-	const { scrollYProgress } = useScroll({
-		target: ref,
-		offset: ["0 1", "0.75 1"],
-	});
-	const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-	const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
 
   return (
     <Section className="booking" id="booking">
-    <motion.div
-    className="footer-text__container booking-container"
-    ref={ref}
-    style={{ scale: scaleProgress, opacity: opacityProgress }}
+    <Zoom triggerOnce
   >
     <Article >
    <h2 className="text-red-300">Booking and tours</h2>
@@ -36,7 +23,7 @@ function CalendarDemo() {
     />
     </Article>
 
-</motion.div>
+</Zoom>
 </Section>
 
   )
@@ -84,7 +71,7 @@ const Article = styled.article`
 
   @media (max-width: 900px) {
     font-size: var(--semi-large-fs);
-    margin: var(--spacing-20) 0;
+    margin: var(--spacing-10) 0;
   }
 
   @media (max-width: 500px) {

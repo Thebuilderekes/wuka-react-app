@@ -55,7 +55,7 @@ html {
 	width: 100%;
 	height: 100%;
 	background: var(--hero-white-color);
-
+   overflow-x: hidden;
 }
 
 body {
