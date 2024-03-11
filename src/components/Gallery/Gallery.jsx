@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
-// import "./gallery.css";
 import wukaphoto1 from "../../assets/img/wuka-gal1.jpg";
 import wukaphoto2 from "../../assets/img/wuka-gal2.jpg";
 

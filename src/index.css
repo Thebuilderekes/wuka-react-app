@@ -19,8 +19,10 @@
 	--mid-dark-color: #1d2020;
 	--pink-color: #b75a64;
 	--dark-pink-color: #ee0f64;
+	--light-pink-color: #f277a7;
 	--cream-color: #b4ab98;
-	--text-color: #ccddef;
+	--light-grey: #d9d9d9;
+	--white-color: #ccddef;
 
 	/*spacing*/
 	--spacing-1: 1%;

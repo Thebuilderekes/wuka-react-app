@@ -90,7 +90,7 @@ const Section = styled.section`
 		text-decoration: none;
 		font-size: var(--medium-fs);
 		background: var(--dark-color);
-		color: var(--text-color);
+		color: var(--white-color);
 		padding: var(--spacing-2) var(--spacing-5);
 		-webkit-transition: all 300ms ease;
 		transition: all 300ms ease;

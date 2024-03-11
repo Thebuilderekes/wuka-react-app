@@ -6,7 +6,7 @@ import "../../index.css";
 import { FaInstagram, FaYoutube, FaSoundcloud } from "react-icons/fa";
 
 const herosection = "#hero-section";
-const iconStyle = { color: "var(--text-color)", fontSize: "4rem" };
+const iconStyle = { color: "var(--white-color)", fontSize: "4rem" };
 const socialLinks = [
 	{
 		url: "https://soundcloud.com/wuka7healpha/sets/rigel-933478488",
@@ -43,11 +43,9 @@ function Foot({ url, ariaLabel, text, tooltip }) {
 				ref={ref}
 				style={{ scale: scaleProgress, opacity: opacityProgress }}
 			>
-				{/* <div className="footer-text__container"> */}
 				<a className="back-to-top-btn" href={herosection}>
 					Back to top
 				</a>
-
 				<dl>
 					<dt>
 						<h3>Follow Wuka</h3>
@@ -74,11 +72,6 @@ function Foot({ url, ariaLabel, text, tooltip }) {
 					</dd>
 				</dl>
 
-				<blockquote>
-					<p>"Music is the universal language of mankind." </p>
-					<br />
-					<small>Henry Wadsworth Longfellow</small>
-				</blockquote>
 			</motion.div>
 			<small className="attribute">
 				{" "}
@@ -124,18 +117,15 @@ const Footer = styled.footer`
 
 		.back-to-top-btn {
 			font-size: var(--medium-fs);
-			margin-bottom: var(--spacing-2);
+			margin-bottom: var(--spacing-1);
 			background-color: var(--dark-pink-color);
 			color: #ffffff;
 			padding: var(--spacing-2);
 		}
+		
+		.back-to-top-btn:hover {
+			background-color: var(--light-pink-color);
 
-		blockquote {
-			text-align: center;
-			color: var(--text-color);
-			p {
-				font-size: var(--semi-medium-fs);
-			}
 		}
 
 		dl {
@@ -144,7 +134,7 @@ const Footer = styled.footer`
 					text-transform: uppercase;
 					margin: 3rem 0;
 					font-weight: 600;
-					color: var(--text-color);
+					color: var(--white-color);
 					text-align: center;
 					text-transform: uppercase;
 					letter-spacing: 0.03em;
@@ -185,14 +175,14 @@ const Footer = styled.footer`
 	.attribute {
 		width: 100%;
 		padding: var(--spacing-1) 0;
-		color: var(--text-color);
+		color: var(--white-color);
 		background-color: var(--mid-dark-color);
 		text-align: center;
 		font-size: var(--default-fs);
 
 		a {
 			text-decoration: underline;
-			color: var(--text-color);
+			color: var(--white-color);
 		}
 	}
 `;

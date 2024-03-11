@@ -144,7 +144,7 @@ const Header = styled.div`
 	}
 
 	.logo {
-		color: var(--text-color);
+		color: var(--white-color);
 		font-size: var(--medium-fs);
 		text-decoration: none;
 		font-weight: 900;
@@ -181,7 +181,8 @@ const Header = styled.div`
 				li {
 					list-style: none;
 					.desktop-navLink {
-						color: var(--pink-color);
+						color: var(--white-color);
+
 						padding: 0 10px;
 						font-size: var(--medium-fs);
 						cursor: pointer;
@@ -190,7 +191,7 @@ const Header = styled.div`
 						text-decoration: none;
 
 						&:hover {
-							color: var(--text-color);
+							color: var(--pink-color);
 						}
 					}
 				}
@@ -204,7 +205,7 @@ const Header = styled.div`
 		button.nav-toggler {
 			display: none;
 			background-color: transparent;
-			color: var(--text-color);
+			color: var(--white-color);
 			font-weight: 600;
 			border: none;
 
@@ -240,7 +241,7 @@ const Header = styled.div`
 				list-style: none;
 				.mobile-navLink {
 					font-size: var(--semi-large-fs);
-					color: var(--text-color);
+					color: var(--white-color);
 					text-decoration: none;
 				}
 			}
