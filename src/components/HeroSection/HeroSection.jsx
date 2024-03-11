@@ -1,11 +1,35 @@
 import React from "react";
+import { useEffect, useState } from 'react';
 import styled from "styled-components";
 import "../../index.css";
 import bgImg from "../../assets/img/wuka-2.webp";
 
 function HeroSection() {
+	const [scrollPosition, setScrollPosition] = useState(0);
+
+	useEffect(() => {
+	  const handleWindowScroll = () => {
+		const newScrollPosition = window.scrollY;
+		setScrollPosition(newScrollPosition);
+	  };
+  
+	  window.addEventListener('scroll', handleWindowScroll);
+  
+	  // Cleanup function to remove event listener on unmount
+	  return () => window.removeEventListener('scroll', handleWindowScroll);
+	}, []);
+  
+	const heroSectionStyle = {
+	  transform: `translateX(${scrollPosition * 0.2}px)`, // Adjust multiplier for desired movement
+	  marginLeft: `${scrollPosition * 0.1}px`, // Adjust multiplier for margin-left
+	  backgroundImage: `url(${bgImg})`, // Replace with your image path
+	  backgroundSize: 'cover',
+	  backgroundPosition: 'center',
+	  height: '100vh', // Ensure full viewport height
+	};
+
 	return (
-		<Section className="hero-section" id="hero-section">
+		<Section className="hero-section" style={heroSectionStyle} id="hero-section">
 			<div className="hero-section-text animate__animated animate__fadeInLeft  animate__delay-1s">
 				<div className="hero-section-text__container">
 					<h1 className="main-heading">WUKA</h1>
@@ -26,9 +50,9 @@ export default HeroSection;
 const Section = styled.section`
 	width: 100%;
 	height: 100vh;
-	background-image: url(${bgImg});
+	/* background-image: url(${bgImg});
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: cover; */
 	font-family: "Crimson Text";
 
 	@media (max-width: 500px) {
