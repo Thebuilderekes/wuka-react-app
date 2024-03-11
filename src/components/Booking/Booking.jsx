@@ -20,7 +20,7 @@ function CalendarDemo() {
 	const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
 
   return (
-    <Section class="booking-tour-container">
+    <Section className="booking-tour-container">
     <motion.div
     className="footer-text__container booking-container"
     ref={ref}
@@ -48,12 +48,35 @@ const Section = styled.section`
 background-color: var(--light-grey-color);
 padding: var(--spacing-10);
 
+
+@media (max-width: 500px) {
+padding: var(--spacing-20) var(--spacing-5);
+
+  
+}
 `
 const Article = styled.article`
  display: flex;
- justify-content: space-evenly;
+ justify-content: space-between;
+ background-color: var(--grey-color);
+ /* box-shadow: 0px 4px 5px 0px rgba(102,95,95,0.75);
+-webkit-box-shadow: 0px 4px 5px 0px rgba(102,95,95,0.75);
+-moz-box-shadow: 0px 4px 5px 0px rgba(102,95,95,0.75);  */
+-webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
+  -moz-box-shadow: rgba(0,0,0,0.3) 0 1px 3px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
+
  gap: var(--spacing-10);
  align-items: center;
+ padding: var(--spacing-8);
+
+
+
+ @media (max-width: 1000px) {
+     flex-direction: column;
+     padding: var(--spacing-8) var(--spacing-8);
+
+ }
 
 
  h2 {
@@ -62,15 +85,16 @@ const Article = styled.article`
   font-family: "Crimson Text";
   text-transform: uppercase;
 
-  @media (max-width: 500px) {
+  @media (max-width: 900px) {
     font-size: var(--semi-large-fs);
     margin: var(--spacing-20) 0;
   }
- }
 
+  @media (max-width: 500px) {
+    font-size: var(--semi-medium-fs);
+    margin: var(--spacing-20) 0;
+  }
 
- @media (max-width: 500px) {
-     flex-direction: column;
  }
 
 `

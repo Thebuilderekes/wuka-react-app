@@ -56,7 +56,7 @@ const Section = styled.section`
 		@media (max-width: 500px) {
 			width: 100%;
 			gap: 0.8rem;
-			padding-top: var(--spacing-100);
+			padding-top: var(--spacing-70);
 		}
 	}
 

@@ -82,11 +82,11 @@ const Section = styled.div`
 	}
 
 	.card {
-		border-radius: 16px;
 		background-color: var(--cream-color);
-		box-shadow: 10px 10px 20px 0px rgba(99, 54, 58, 0.75);
-		-webkit-box-shadow: 10px 10px 20px 0px rgba(99, 54, 58, 0.75);
-		-moz-box-shadow: 10px 10px 20px 0px rgba(99, 54, 58, 0.75);
+		-webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
+  -moz-box-shadow: rgba(0,0,0,0.3) 0 1px 3px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
+
 		padding: var(--spacing-1) var(--spacing-5);
 		text-align: center;
 
@@ -103,7 +103,7 @@ const Section = styled.div`
 		h2 {
 			font-size: var(--large-fs);
 			text-align: center;
-			color: var(--text-color);
+			color: var(--white-color);
 			background-color: var(--dark-color);
 			padding: var(--spacing-1) var(--spacing-5);
 			margin: 0 var(--spacing-20);
@@ -120,7 +120,6 @@ const Section = styled.div`
 
 			@media (max-width: 600px) {
 				text-align: center;
-				color: var(--text-color);
 				background-color: var(--dark-color);
 				padding: var(--spacing-1) var(--spacing-10);
 				margin: var(--spacing-2) var(--spacing-25);
