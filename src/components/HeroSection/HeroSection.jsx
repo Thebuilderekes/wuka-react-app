@@ -49,10 +49,6 @@ export default HeroSection;
 
 const Section = styled.section`
 	width: 100%;
-	height: 100vh;
-	/* background-image: url(${bgImg});
-	background-repeat: no-repeat;
-	background-size: cover; */
 	font-family: "Crimson Text";
 
 	@media (max-width: 500px) {

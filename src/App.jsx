@@ -10,7 +10,7 @@ import "./index.css";
 
 function App() {
 	return (
-		<div class="app-body">
+		<div className="app-body">
 			<Navigation />
 			<HeroSection />
 			<main>
