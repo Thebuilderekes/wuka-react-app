@@ -1,4 +1,4 @@
-## **Project: Musician and Artist Website**
+## **Project: Musician Website**
 
 **Overview**
 
